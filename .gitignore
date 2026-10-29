@@ -1,0 +1,12 @@
+/target/
+/web/node_modules/
+/web/dist/
+/web/.svelte-kit/
+/.local/
+/traces/
+/reports/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store

@@ -1,0 +1,76 @@
+:root {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #28332d;
+  background: #f7f7f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: light;
+  line-height: 1.6;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 20rem; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; }
+button:focus-visible, a:focus-visible { outline: 3px solid #28764b; outline-offset: 4px; }
+
+.workspace {
+  max-width: 76rem;
+  min-height: 100dvh;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 0.75rem + 2vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid #dcded5;
+}
+
+.brand { display: inline-flex; align-items: center; gap: 0.65rem; font-size: 1.05rem; font-weight: 650; color: inherit; text-decoration: none; }
+.brand-mark { display: grid; place-items: center; width: 2rem; height: 2rem; background: #e1eadc; color: #265437; border-radius: 0.4rem; font-family: ui-serif, Georgia, serif; font-size: 1.5rem; line-height: 1; }
+.stage { padding: 0.2rem 0.65rem; border: 1px solid #cfd6ca; border-radius: 0.35rem; color: #4a5b4b; font-size: 0.78rem; font-weight: 550; }
+main { flex: 1; padding-block: clamp(2.5rem, 2rem + 2vw, 4.5rem); }
+.page-intro { margin-bottom: 2.25rem; max-width: 44rem; }
+.eyebrow { margin: 0 0 0.65rem; color: #61705e; font-size: 0.75rem; font-weight: 650; letter-spacing: 0.1em; text-transform: uppercase; }
+h1 { margin: 0; font-size: clamp(1.75rem, 1.4rem + 1vw, 2.5rem); line-height: 1.2; font-weight: 550; letter-spacing: -0.035em; }
+.intro { margin: 1rem 0 0; color: #626b60; font-size: 1.05rem; }
+.panels { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 1.25rem; align-items: start; }
+.connection-panel, .scope-panel { padding: clamp(1.25rem, 1rem + 0.8vw, 2rem); border: 1px solid #dcded5; border-radius: 0.65rem; }
+.connection-panel { background: #fff; }
+.scope-panel { background: #efefe8; }
+.panel-heading { display: flex; align-items: center; gap: 0.65rem; margin-bottom: 1rem; }
+.section-index { color: #6c7967; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.75rem; }
+h2 { margin: 0; font-size: 1.05rem; font-weight: 650; line-height: 1.4; }
+.connection-panel > p, .scope-panel > p { margin: 0; color: #626b60; font-size: 0.9rem; }
+.connection-details { margin: 1.75rem 0; padding-block: 0.75rem; border-block: 1px solid #e7e8e1; }
+.connection-details > div { display: flex; justify-content: space-between; gap: 1rem; padding-block: 0.3rem; font-size: 0.85rem; }
+dt { color: #6a7268; }
+dd { margin: 0; text-align: right; }
+code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.88em; }
+button { border: 1px solid #245936; border-radius: 0.35rem; padding: 0.65rem 1rem; background: #2f6841; color: #fff; font-size: 0.85rem; font-weight: 600; cursor: pointer; }
+button:hover:not(:disabled) { background: #245534; }
+button:disabled { cursor: wait; opacity: 0.7; }
+.connection-status { margin-top: 1.1rem; min-height: 4rem; color: #656e63; font-size: 0.85rem; }
+.connection-status p { margin: 0; }
+.connection-status.connected { color: #245936; }
+.connection-status.unavailable { color: #824b2b; }
+.connection-status .status-hint { margin-top: 0.3rem; font-size: 0.8rem; color: #6a7268; }
+h3 { margin: 1.75rem 0 0.7rem; font-size: 0.75rem; font-weight: 650; color: #626b60; letter-spacing: 0.06em; text-transform: uppercase; }
+ul { margin: 0; padding-left: 1.1rem; font-size: 0.85rem; }
+li + li { margin-top: 0.5rem; }
+.scope-panel .scope-note { margin-top: 1.75rem; padding-top: 1rem; border-top: 1px solid #dcded5; font-size: 0.8rem; }
+footer { display: flex; flex-wrap: wrap; gap: 0.65rem; padding-block: 1.25rem; border-top: 1px solid #dcded5; color: #6a7268; font-size: 0.75rem; }
+
+@media (max-width: 44rem) {
+  .panels { grid-template-columns: minmax(0, 1fr); }
+  .topbar { padding-block: 1rem; }
+  main { padding-block: 2rem; }
+}

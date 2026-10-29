@@ -1,0 +1,14 @@
+[package]
+name = "pi-trace"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Local web explorer for Pi coding agent traces"
+publish = false
+
+[dependencies]
+axum = "0.8.9"
+serde = { version = "1", features = ["derive"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net", "signal"] }
+tower-http = { version = "0.6", features = ["fs"] }
