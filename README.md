@@ -21,7 +21,7 @@ npm --prefix web run build
 cargo run -p pi-trace --locked
 ```
 
-Open [127.0.0.1:4317](http://127.0.0.1:4317) and select **Check connection**. The page will report the Rust server's version and bootstrap status. Stop the server with Ctrl+C.
+Run the server from the repository root so it can find `web/dist`. Open [127.0.0.1:4317](http://127.0.0.1:4317) and select **Check connection**. The page will report the Rust server's version and bootstrap status. Stop the server with Ctrl+C.
 
 For hot reload, keep the Rust server running and use another terminal:
 

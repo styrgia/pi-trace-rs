@@ -1,6 +1,6 @@
 use axum::{Json, Router, routing::get};
 use serde::Serialize;
-use std::{error::Error, path::PathBuf};
+use std::error::Error;
 use tower_http::services::ServeDir;
 
 #[derive(Serialize)]
@@ -22,10 +22,9 @@ async fn health() -> Json<Health> {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
-    let web_dist = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../web/dist");
     let app = Router::new()
         .route("/api/v1/health", get(health))
-        .fallback_service(ServeDir::new(web_dist));
+        .fallback_service(ServeDir::new("web/dist"));
     let listener = tokio::net::TcpListener::bind("127.0.0.1:4317").await?;
 
     println!("Pi Trace bootstrap: http://127.0.0.1:4317");
