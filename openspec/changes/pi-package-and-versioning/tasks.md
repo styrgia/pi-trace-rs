@@ -17,4 +17,4 @@
 
 - [x] 3.1 Remove workflow definitions and add one root local-check command; verify the full command completes successfully.
 - [x] 3.2 Shorten the README to approximately half its former length and remove frontend framework branding from authored descriptions; verify the word count and current command names.
-- [ ] 3.3 Review package and specification consistency, then commit and push; verify the final working tree and remote head.
+- [x] 3.3 Review package and specification consistency, then commit and push; verify the final working tree and remote head.
