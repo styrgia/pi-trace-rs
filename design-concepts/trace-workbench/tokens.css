@@ -16,7 +16,7 @@
   --clear: transparent; --shadow-float: 0 12px 40px #1f302b24;
   --text-md: 14px; --text-title: 16px; --text-section: 18px; --text-display: 26px;
   --display-weight: 600; --tracking-display: -0.035em; --dur-short: 140ms;
-  --container: 1920px; --space-3xl: 48px;
+  --container: 1520px; --space-3xl: 48px;
 }
 :root[data-theme="dark"] {
   color-scheme: dark;

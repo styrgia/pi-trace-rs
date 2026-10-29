@@ -38,24 +38,35 @@
 <div class="app">
   <header class="topbar">
     <a class="brand" href="./index.html" aria-label="Pi Trace concept home"><svg><use href="#i-trace"/></svg>Pi Trace</a>
-    <span class="slash" aria-hidden="true">/</span>
-    <span class="project"><svg aria-hidden="true"><use href="#i-box"/></svg>demo / authentication</span>
+    <span class="project">demo / authentication</span>
     <nav aria-label="Workspace"><button class="nav-button" data-page="trace" aria-pressed="true">Trace explorer</button><button class="nav-button" data-page="diagnostics" aria-pressed="false">Diagnostics <span class="count">2</span></button></nav>
-    <div class="topbar-right"><span class="demo-label">Design concept</span><button class="icon-button" id="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false"><svg aria-hidden="true"><use href="#i-moon"/></svg></button><button class="icon-button help-button" id="help" aria-label="Keyboard shortcuts"><svg aria-hidden="true"><use href="#i-help"/></svg></button></div>
+    <div class="topbar-right"><span class="demo-label">Synthetic preview</span><button class="icon-button" id="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false"><svg aria-hidden="true"><use href="#i-moon"/></svg></button><button class="icon-button help-button" id="help" aria-label="Keyboard shortcuts"><svg aria-hidden="true"><use href="#i-help"/></svg></button></div>
   </header>
   <main class="sheet" id="main" tabindex="-1">
     <noscript>This interactive concept shows a synthetic 42.8 s session with two turns, four generations and a recovered tool error. Enable JavaScript to explore it.</noscript>
     <section class="intro" aria-labelledby="trace-title">
-      <div class="breadcrumb"><span>Sessions</span><svg aria-hidden="true"><use href="#i-chevron"/></svg><span>29 Oct 2026, 14:32</span><svg aria-hidden="true"><use href="#i-chevron"/></svg><span>8f2c41a</span></div>
-      <div class="title-line"><div class="title-group"><h1 id="trace-title">Fix authentication flow</h1><span class="pill success"><svg aria-hidden="true"><use href="#i-check"/></svg>Completed</span></div><button class="quiet-button" id="copy-link"><svg aria-hidden="true"><use href="#i-copy"/></svg><span class="button-label">Copy view link</span></button></div>
-      <div class="subtitle"><span><svg aria-hidden="true"><use href="#i-file"/></svg>example/events.jsonl</span><span>claude-sonnet-4-5</span><span class="pill">Synthetic trace</span></div>
-    </section>
-    <section class="stats" aria-label="Synthetic session summary">
-      <div><div class="stat-label">Session elapsed</div><div class="stat-value" id="total-duration">42.8<span class="unit">s</span></div><p class="stat-note">Derived from timestamps</p></div>
-      <div><div class="stat-label">Total tokens</div><div class="stat-value" id="total-tokens">44.3<span class="unit">k</span></div><p class="stat-note" id="token-breakdown">41.3k in / 3.0k out</p></div>
-      <div><div class="stat-label">Generations</div><div class="stat-value" id="generation-count">4</div><p class="stat-note">Across 2 turns</p></div>
-      <div><div class="stat-label">Tool calls</div><div class="stat-value" id="tool-count">7</div><p class="stat-note"><span class="attention">1 failed</span>, then recovered</p></div>
-      <div><div class="stat-label">Recorded cost</div><div class="stat-value">Unknown</div><p class="stat-note">No cost in source</p></div>
+      <div class="title-line"><div class="title-group"><h1 id="trace-title">Fix authentication flow</h1><span class="pill success session-status"><svg aria-hidden="true"><use href="#i-check"/></svg>Completed</span></div><button class="quiet-button" id="copy-link" aria-label="Copy view link"><svg aria-hidden="true"><use href="#i-copy"/></svg><span class="button-label">Copy view link</span></button></div>
+      <div class="trace-meta">
+        <section class="stats" aria-label="Synthetic session summary">
+          <div><span class="stat-value" id="total-duration">42.8<span class="unit">s</span></span><span class="stat-label">elapsed, derived</span></div>
+          <div><span class="stat-value" id="total-tokens">44.3<span class="unit">k</span></span><span class="stat-label">tokens</span></div>
+          <div><span class="stat-value" id="generation-count">4</span><span class="stat-label">generations</span></div>
+          <div><span class="stat-value" id="tool-count">7</span><span class="stat-label">tool calls</span></div>
+        </section>
+        <details class="session-info">
+          <summary>Session info</summary>
+          <dl class="metadata session-info-panel">
+            <div><dt>Session</dt><dd>8f2c41a</dd></div>
+            <div><dt>Started</dt><dd>29 Oct 2026, 14:32</dd></div>
+            <div><dt>Source</dt><dd>example/events.jsonl</dd></div>
+            <div><dt>Model</dt><dd>claude-sonnet-4-5</dd></div>
+            <div><dt>Turns</dt><dd>2</dd></div>
+            <div><dt>Token usage</dt><dd id="token-breakdown">41.3k in / 3.0k out</dd></div>
+            <div><dt>Tool errors</dt><dd>1 failed, then recovered</dd></div>
+            <div><dt>Recorded cost</dt><dd>Unknown, no cost in source</dd></div>
+          </dl>
+        </details>
+      </div>
     </section>
     <div id="trace-page">
       <div class="toolbar" role="search" aria-label="Filter trace observations">
@@ -67,11 +78,9 @@
       </div>
       <div class="workbench">
         <section class="execution" aria-labelledby="execution-title">
-          <div class="execution-head"><div class="tree-title"><h2 id="execution-title">Execution tree</h2><span class="count" id="span-count">14</span><button class="icon-button" id="collapse" aria-label="Collapse all turns" title="Collapse or expand turns"><svg aria-hidden="true"><use href="#i-collapse"/></svg></button></div><div class="timeline-heading"><strong id="view-title">Session timeline</strong><span>Elapsed time</span></div></div>
-          <div class="overview"><div class="overview-label"><svg aria-hidden="true"><use href="#i-timeline"/></svg>Execution overview</div><div class="overview-map" id="overview" role="img" aria-label="42.8 second execution. Four generations and seven tools including one failed test."></div></div>
-          <div class="ruler"><div class="ruler-left"><span>Observation</span><span>Duration</span></div><div class="ruler-ticks" id="ruler"><span>0 s</span><span>10.7 s</span><span>21.4 s</span><span>32.1 s</span><span>42.8 s</span></div></div>
+          <div class="ruler"><div class="tree-title"><h2 id="execution-title">Execution</h2><span class="count" id="span-count">14</span><button class="icon-button" id="collapse" aria-label="Collapse all turns" title="Collapse or expand turns"><svg aria-hidden="true"><use href="#i-collapse"/></svg></button></div><div class="ruler-ticks" id="ruler" aria-label="Session timeline in seconds"><span>0 s</span><span>10.7 s</span><span>21.4 s</span><span>32.1 s</span><span>42.8 s</span></div></div>
           <div class="trace-rows" id="trace-rows" aria-label="Trace observations"></div>
-          <div class="legend"><span><i class="swatch" aria-hidden="true"></i>Generation</span><span><i class="swatch tool" aria-hidden="true"></i>Tool call</span><span><i class="swatch failed" aria-hidden="true"></i>Failed</span><span class="timing-note">Bars show elapsed intervals</span></div>
+          <div class="legend"><span><i class="swatch" aria-hidden="true"></i>Generation</span><span><i class="swatch tool" aria-hidden="true"></i>Tool call</span><span><i class="swatch failed" aria-hidden="true"></i>Failed</span></div>
         </section>
         <aside class="inspector" aria-labelledby="inspector-title"><div class="inspector-heading"><h2 id="inspector-title">Observation details</h2><button class="icon-button" id="copy-id" aria-label="Copy observation ID"><svg aria-hidden="true"><use href="#i-copy"/></svg></button></div><div class="selection-notice" id="selection-notice" hidden>Selected observation is outside the current filter.</div><div class="inspector-body" id="inspector-body"></div></aside>
       </div>
@@ -81,9 +90,8 @@
       <article class="diagnostic"><svg aria-hidden="true"><use href="#i-warning"/></svg><div><h3>First token time is not recorded</h3><p>events.jsonl:5. Response-header latency cannot be used as time to first token.</p></div><button class="quiet-button" data-select="gen-1">Inspect generation</button></article>
       <article class="diagnostic"><svg aria-hidden="true"><use href="#i-warning"/></svg><div><h3>Cost is unavailable</h3><p>No authoritative cost field is present. The concept does not estimate a price.</p></div><button class="quiet-button" data-select="session">Inspect session</button></article>
     </section>
-    <footer class="statusbar"><span><svg aria-hidden="true"><use href="#i-lock"/></svg>Local preview <span aria-hidden="true">/</span> Synthetic data only</span><span id="result-count" role="status" aria-live="polite">14 observations / 1 recovered error</span></footer>
+    <footer class="statusbar"><span id="result-count" role="status" aria-live="polite">14 observations / 1 recovered error</span><details class="preview-options"><summary>Preview options</summary><div class="preview-options-panel"><label for="preview-state">Preview state<select id="preview-state"><option value="full">Example trace</option><option value="empty">Empty workspace</option><option value="error">Import error</option><option value="loading">Loading preview</option></select></label></div></details></footer>
   </main>
-  <footer class="preview-footer"><span>Pi Trace concept <span aria-hidden="true">/</span> Execution, in context.</span><label for="preview-state">Preview state<select id="preview-state"><option value="full">Example trace</option><option value="empty">Empty workspace</option><option value="error">Import error</option><option value="loading">Loading preview</option></select></label></footer>
 </div>
 <dialog id="shortcuts"><h2>Explore the trace</h2><p>This is an interactive design concept using synthetic data. No trace files are read.</p><dl><div><dt>Search observations</dt><dd><kbd>/</kbd></dd></div><div><dt>Move through observations</dt><dd><kbd>↑</kbd> <kbd>↓</kbd></dd></div><div><dt>Collapse / expand a turn</dt><dd><kbd>←</kbd> <kbd>→</kbd></dd></div><div><dt>Close this dialog</dt><dd><kbd>Esc</kbd></dd></div></dl><form method="dialog"><button class="primary-button">Got it</button></form></dialog>
 <div class="toast" id="toast" role="status" hidden></div>

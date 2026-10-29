@@ -18,6 +18,7 @@ const observations = [
 const byId = new Map(observations.map(node => [node.id, node]));
 const session = byId.get('session');
 const generations = observations.filter(node => node.type === 'generation');
+const generationNames = new Map(generations.map((node, index) => [node.id, `Generation ${index + 1}`]));
 const tools = observations.filter(node => node.type === 'tool');
 const totalInput = generations.reduce((sum, node) => sum + node.inputTokens, 0);
 const totalOutput = generations.reduce((sum, node) => sum + node.outputTokens, 0);
@@ -54,7 +55,7 @@ function updateUrl() {
 }
 function matches(node) {
   const query = state.query.toLowerCase().trim();
-  const text = `${node.name} ${node.type} ${node.id} ${node.description}`.toLowerCase();
+  const text = `${node.name} ${node.type} ${node.id} ${node.description} ${generationNames.get(node.id) || ''}`.toLowerCase();
   return (!query || text.includes(query)) && (!state.filter ||
     (state.filter === 'error' && node.outcome === 'error') ||
     (state.filter === 'tool' && node.type === 'tool') ||
@@ -104,12 +105,13 @@ function renderRows() {
     container.innerHTML = visibleNodes.map(node => {
       const isParent = ['session', 'turn'].includes(node.type);
       const nodeIcon = node.outcome === 'error' ? 'error' : typeIcons[node.type];
+      const name = node.type === 'session' ? 'Session' : generationNames.get(node.id) || node.name;
+      const context = node.type === 'tool' ? node.description.split('/').pop() : '';
       const left = node.start / session.end * 100, width = Math.max((node.end - node.start) / session.end * 100, .8);
-      const label = node.end - node.start >= 2.5 && !isParent ? `<span class="bar-label">${duration(node)}</span>` : '';
       const chart = state.view === 'waterfall'
-        ? `<div class="chart-track"><span class="span-bar ${node.type} ${node.outcome === 'error' ? 'error' : ''}" style="--start:${left}%;--size:${width}%">${label}</span></div>`
+        ? `<div class="chart-track"><span class="span-bar ${node.type} ${node.outcome === 'error' ? 'error' : ''}" style="--start:${left}%;--size:${width}%"></span></div>`
         : `<span class="list-cell">${node.type}</span><span class="list-cell">+${node.start.toFixed(1)} s</span><span class="pill ${node.outcome === 'error' ? 'error' : ''}">${node.outcome}</span>`;
-      return `<button class="trace-row" data-node="${node.id}" data-type="${node.type}" aria-pressed="${state.selected === node.id}" aria-label="${node.name}, ${node.description}, ${duration(node)}, ${node.outcome}" title="${node.description}${isParent ? '. Double-click to collapse or expand.' : ''}" style="--depth:${depth(node)}"><span class="row-name">${isParent ? icon(state.collapsed.has(node.id) ? 'chevron' : 'down', 'chevron') : ''}${icon(nodeIcon, `node-icon ${node.type === 'generation' ? 'generation-icon' : ''} ${node.outcome === 'error' ? 'error-icon' : ''}`)}<span class="name-text">${node.type === 'session' ? 'Session' : node.name}</span><span class="duration">${duration(node)}</span></span><span class="row-chart">${chart}</span></button>`;
+      return `<button class="trace-row" data-node="${node.id}" data-type="${node.type}" aria-pressed="${state.selected === node.id}" aria-label="${name}, ${node.description}, ${duration(node)}, ${node.outcome}" title="${node.description}${isParent ? '. Double-click to collapse or expand.' : ''}" style="--depth:${depth(node)}"><span class="row-name">${isParent ? icon(state.collapsed.has(node.id) ? 'chevron' : 'down', 'chevron') : ''}${icon(nodeIcon, `node-icon ${node.type === 'generation' ? 'generation-icon' : ''} ${node.outcome === 'error' ? 'error-icon' : ''}`)}<span class="name-text"><span class="node-name">${name}</span>${context ? `<span class="node-context">${context}</span>` : ''}</span><span class="duration">${duration(node)}</span></span><span class="row-chart">${chart}</span></button>`;
     }).join('');
     container.querySelectorAll('[data-node]').forEach(button => {
       button.onclick = event => {
@@ -133,19 +135,19 @@ function renderInspector() {
     body.innerHTML = '<div class="empty-state"><h3>No observation selected</h3><p>Details appear when a trace is loaded.</p></div>';
     $('#selection-notice').hidden = true; return;
   }
-  body.innerHTML = `<div class="detail-main"><div class="node-title">${icon(typeIcons[node.type])}<h3>${isGeneration ? 'LLM generation' : node.type === 'session' ? 'Session' : node.name}</h3></div><p class="node-description">${node.description}</p><span class="pill ${isError ? 'error' : 'success'}">${icon(isError ? 'error' : 'check')}${status}</span> <span class="pill">${kind}</span><dl class="detail-stats"><div><dt>Duration</dt><dd>${duration(node)} <small>${node.timing}</small></dd></div><div><dt>${isGeneration ? 'Total tokens' : 'Start offset'}</dt><dd>${isGeneration ? formatTokens(node.inputTokens + node.outputTokens) : `+${node.start.toFixed(1)} <small>s</small>`}</dd></div></dl></div><div class="detail-content"><div class="inspector-tabs" aria-label="Detail view"><button data-tab="io" aria-pressed="${state.tab === 'io'}">Input & output</button><button data-tab="metadata" aria-pressed="${state.tab === 'metadata'}">Metadata</button></div><div id="detail-panel"></div></div><div class="detail-bottom">${node.recovery ? `<div class="recovery"><p>${icon('check')}Recovered in Turn 2</p><button id="recovery">Inspect the successful retry</button></div>` : ''}<div class="provenance">${icon('file')}example/events.jsonl:${node.line} <span aria-hidden="true">/</span> Synthetic source</div></div>`;
+  body.innerHTML = `<div class="detail-main"><div class="node-title"><h3>${isGeneration ? 'LLM generation' : node.type === 'session' ? 'Session' : node.name}</h3><span class="node-kind">${kind}</span></div><p class="node-description">${node.description}</p><span class="node-status ${isError ? 'attention' : ''}">${icon(isError ? 'error' : 'check')}${status}</span><dl class="detail-stats"><div><dt>Duration</dt><dd>${duration(node)} <small>${node.timing}</small></dd></div><div><dt>${isGeneration ? 'Total tokens' : 'Start offset'}</dt><dd>${isGeneration ? formatTokens(node.inputTokens + node.outputTokens) : `+${node.start.toFixed(1)} <small>s</small>`}</dd></div></dl></div><div class="detail-content"><div class="inspector-tabs" aria-label="Detail view"><button data-tab="io" aria-pressed="${state.tab === 'io'}">Input & output</button><button data-tab="metadata" aria-pressed="${state.tab === 'metadata'}">Metadata</button></div><div id="detail-panel"></div></div><div class="detail-bottom">${node.recovery ? `<div class="recovery"><p>${icon('check')}Recovered in Turn 2</p><button id="recovery">Inspect the successful retry</button></div>` : ''}<div class="provenance">${icon('file')}example/events.jsonl:${node.line}</div></div>`;
   const panel = $('#detail-panel');
   if (state.tab === 'io') {
-    panel.innerHTML = `<div class="field-heading">Input <span>${isGeneration ? 'Prompt' : 'Arguments'}</span></div><div class="content-box" id="input-content"></div><div class="field-heading">Output <span>${isError ? 'Exit code 1' : isGeneration ? node.stop : 'Result'}</span></div><div class="content-box ${isError && revealed ? 'failed' : ''}" id="output-content"></div>`;
-    ['input', 'output'].forEach(field => {
-      const block = $(`#${field}-content`);
-      if (revealed) { const pre = document.createElement('pre'); pre.textContent = node[field]; block.append(pre); }
-      else block.innerHTML = `<div class="locked-content"><span>${icon('lock')}Content hidden</span><button data-reveal="${node.id}">Reveal content</button></div>`;
-    });
-    panel.querySelectorAll('[data-reveal]').forEach(button => button.onclick = () => { state.revealed.add(node.id); renderInspector(); });
     if (revealed) {
+      panel.innerHTML = `<div class="field-heading">Input <span>${isGeneration ? 'Prompt' : 'Arguments'}</span></div><div class="content-box" id="input-content"></div><div class="field-heading">Output <span>${isError ? 'Exit code 1' : isGeneration ? node.stop : 'Result'}</span></div><div class="content-box ${isError ? 'failed' : ''}" id="output-content"></div>`;
+      ['input', 'output'].forEach(field => {
+        const pre = document.createElement('pre'); pre.textContent = node[field]; $(`#${field}-content`).append(pre);
+      });
       const hide = document.createElement('button'); hide.className = 'quiet-button'; hide.style.marginTop = '10px'; hide.textContent = 'Hide content';
       hide.onclick = () => { state.revealed.delete(node.id); renderInspector(); }; panel.append(hide);
+    } else {
+      panel.innerHTML = `<div class="locked-content"><span>Input and output hidden</span><button data-reveal="${node.id}">Reveal content</button></div>`;
+      panel.querySelector('[data-reveal]').onclick = () => { state.revealed.add(node.id); renderInspector(); };
     }
   } else {
     const fields = [ ['Observation ID', node.id], ['Parent', node.parent || 'None'], ['Source', `events.jsonl:${node.line}`], ['Timing origin', node.timing === 'recorded' ? 'Recorded duration' : 'Derived from timestamps'], ['Outcome', node.outcome], ['Recorded cost', 'Unknown'], ...(isGeneration ? [['Input tokens', node.inputTokens.toLocaleString('en-US')], ['Output tokens', node.outputTokens.toLocaleString('en-US')], ['First token time', 'Unknown'], ['Stop reason', node.stop]] : []) ];
@@ -169,8 +171,8 @@ function render() {
   document.querySelectorAll('[data-view]').forEach(button => button.setAttribute('aria-pressed', button.dataset.view === state.view));
   document.querySelectorAll('[data-page]').forEach(button => button.setAttribute('aria-pressed', button.dataset.page === state.page));
   $('#trace-page').hidden = state.page !== 'trace'; $('#diagnostics-page').hidden = state.page !== 'diagnostics';
-  $('#view-title').textContent = state.view === 'waterfall' ? 'Session timeline' : 'Observation list';
   $('#ruler').innerHTML = state.view === 'waterfall' ? '<span>0 s</span><span>10.7 s</span><span>21.4 s</span><span>32.1 s</span><span>42.8 s</span>' : '<span>Type</span><span>Start</span><span>Outcome</span>';
+  $('#ruler').setAttribute('aria-label', state.view === 'waterfall' ? 'Session timeline in seconds' : 'Observation type, start offset and outcome');
   $('#ruler').classList.toggle('is-waterfall', state.view === 'waterfall');
   $('#theme-toggle').setAttribute('aria-pressed', state.theme === 'dark');
   $('#theme-toggle').setAttribute('aria-label', `Switch to ${state.theme === 'dark' ? 'light' : 'dark'} theme`);
@@ -182,8 +184,7 @@ function render() {
   $('#total-tokens').innerHTML = `${((totalInput + totalOutput) / 1000).toFixed(1)}<span class="unit">k</span>`;
   $('#token-breakdown').textContent = `${formatTokens(totalInput)} in / ${formatTokens(totalOutput)} out`;
   $('#generation-count').textContent = generations.length; $('#tool-count').textContent = tools.length;
-  $('.overview').hidden = !hasTrace; $('.ruler').hidden = !hasTrace;
-  $('.breadcrumb').hidden = !hasTrace; $('.subtitle').hidden = !hasTrace;
+  $('.ruler').hidden = !hasTrace; $('.trace-meta').hidden = !hasTrace;
   $('.legend').hidden = !hasTrace; $('.stats').hidden = !hasTrace;
   $('#span-count').textContent = hasTrace ? visibleNodes.length : '0';
   $('.title-group .pill').hidden = !hasTrace; $('#copy-id').disabled = !hasTrace;
@@ -233,7 +234,6 @@ window.addEventListener('hashchange', () => {
   state.view = next.get('view') === 'list' ? 'list' : 'waterfall'; state.tab = next.get('tab') === 'metadata' ? 'metadata' : 'io';
   state.theme = next.get('theme') === 'dark' ? 'dark' : 'light'; render();
 });
-$('#overview').innerHTML = observations.filter(node => ['tool', 'generation'].includes(node.type)).map(node => `<span class="overview-mark ${node.type === 'tool' ? 'tool' : ''} ${node.outcome === 'error' ? 'failed' : ''}" style="left:${node.start / session.end * 100}%;width:${Math.max((node.end - node.start) / session.end * 100, .5)}%"></span>`).join('');
 console.assert(totalInput === 41320 && totalOutput === 3000, 'Synthetic usage totals must reconcile.');
 console.assert(observations.every(node => node.end >= node.start && (!node.parent || byId.has(node.parent))), 'Synthetic intervals and parent links must be valid.');
 render();
