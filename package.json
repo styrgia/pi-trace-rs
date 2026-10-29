@@ -1,0 +1,64 @@
+{
+  "name": "pi-trace-rs",
+  "version": "0.1.0",
+  "description": "Local trace explorer for Pi coding agents, powered by Rust.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/styrgia/pi-trace-rs.git"
+  },
+  "homepage": "https://github.com/styrgia/pi-trace-rs#readme",
+  "bugs": {
+    "url": "https://github.com/styrgia/pi-trace-rs/issues"
+  },
+  "keywords": ["pi-package", "pi", "tracing", "rust"],
+  "engines": {
+    "node": ">=24"
+  },
+  "bin": {
+    "pi-trace-rs": "scripts/start.mjs"
+  },
+  "pi": {
+    "extensions": ["./extensions/pi-trace.mjs"],
+    "changelogPath": "./CHANGELOG.md"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-coding-agent": {
+      "optional": true
+    }
+  },
+  "files": [
+    "extensions/",
+    "scripts/",
+    "native/",
+    "web/dist/",
+    "crates/",
+    "Cargo.toml",
+    "Cargo.lock",
+    "rust-toolchain.toml",
+    "docs/",
+    "CONTRIBUTING.md",
+    "CHANGELOG.md",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:web": "npm --prefix web run build",
+    "start": "node scripts/start.mjs",
+    "dev": "npm --prefix web run dev",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run version:check && npm test && npm run check:rust && npm run check:web && npm run check:specs",
+    "check:rust": "cargo fmt --all -- --check && cargo clippy --workspace --all-targets --locked -- -D warnings && cargo test --workspace --locked",
+    "check:web": "npm --prefix web run check && npm --prefix web run build",
+    "check:specs": "npx --yes --package @fission-ai/openspec@1.15.0 openspec validate --all --strict --no-interactive",
+    "version:check": "node scripts/version.mjs --check",
+    "version:sync": "node scripts/version.mjs --sync",
+    "preversion": "node scripts/version.mjs --check",
+    "version": "node scripts/version.mjs --sync",
+    "prepack": "npm run version:check && npm run build"
+  }
+}

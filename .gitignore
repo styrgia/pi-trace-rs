@@ -1,4 +1,8 @@
 /target/
+/node_modules/
+/.hallmark/
+/native/
+/*.tgz
 /web/node_modules/
 /web/dist/
 /web/.svelte-kit/

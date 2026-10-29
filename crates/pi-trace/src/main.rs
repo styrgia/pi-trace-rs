@@ -28,7 +28,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let listener = tokio::net::TcpListener::bind("127.0.0.1:4317").await?;
 
     println!("Pi Trace bootstrap: http://127.0.0.1:4317");
-    println!("Build the web UI with: npm --prefix web run build");
     axum::serve(listener, app)
         .with_graceful_shutdown(async {
             let _ = tokio::signal::ctrl_c().await;

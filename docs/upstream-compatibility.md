@@ -26,4 +26,4 @@ Never commit real recordings as fixtures. Test data must fabricate IDs, paths, p
 
 ## Capture boundary
 
-[Pi extensions](https://github.com/earendil-works/pi/blob/e7a0df27c09d11bf4161d3605246cbf57a129cb2/packages/coding-agent/docs/extensions.md) run as TypeScript. This Rust application initially consumes recordings from an external collector. Pi's RPC mode could support a future adapter, but it is a different event source and must not be described as having identical provider-hook capture.
+[Pi extensions](https://github.com/earendil-works/pi/blob/e7a0df27c09d11bf4161d3605246cbf57a129cb2/packages/coding-agent/docs/extensions.md) run in JavaScript or TypeScript. This Rust application initially consumes recordings from an external collector. Pi's RPC mode could support a future adapter, but it is a different event source and must not be described as having identical provider-hook capture.

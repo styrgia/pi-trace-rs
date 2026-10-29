@@ -24,7 +24,7 @@
 <svelte:head>
   <meta
     name="description"
-    content="Pi Trace is a local trace explorer for Pi coding agents, with a Rust engine and a Svelte interface."
+    content="Pi Trace is a local trace explorer for Pi coding agents, with a Rust engine."
   />
 </svelte:head>
 
@@ -50,11 +50,11 @@
           <span class="section-index" aria-hidden="true">01</span>
           <h2 id="connection-heading">Engine connection</h2>
         </div>
-        <p>Check that the Svelte interface can reach the local Rust API.</p>
+        <p>Check that the interface can reach the local Rust API.</p>
 
         <dl class="connection-details">
           <div><dt>Engine</dt><dd>Rust</dd></div>
-          <div><dt>Interface</dt><dd>Svelte</dd></div>
+          <div><dt>Interface</dt><dd>Web</dd></div>
           <div><dt>API address</dt><dd><code>127.0.0.1:4317</code></dd></div>
         </dl>
 
