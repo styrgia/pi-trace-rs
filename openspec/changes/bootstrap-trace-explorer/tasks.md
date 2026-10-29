@@ -6,7 +6,7 @@
 - [x] 1.2 Create the Svelte 5 web scaffold and verify a clean npm install, Svelte/TypeScript checks and production build.
 - [x] 1.3 Connect the starter to `/api/v1/health` and verify connected, unavailable and retry states in a real browser.
 - [x] 1.4 Add MIT attribution, compatibility notes, contributor guidance and CI; verify README commands and strict OpenSpec validation.
-- [ ] 1.5 Publish the initial commit to the public GitHub repository and verify its visibility and remote commit.
+- [x] 1.5 Publish the initial commit to the public GitHub repository and verify its visibility and remote commit.
 
 ## 2. Import recordings
 
