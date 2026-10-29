@@ -7,7 +7,7 @@ Pi traces contain useful timing, tool and subagent data, but investigating a slo
 ## What Changes
 
 - Establish an MIT-licensed Rust workspace, web application and contributor workflow.
-- Import existing `pi-trace-extension` JSONL with source diagnostics and explicit session epochs and turn attempts.
+- Import recorded JSONL with source diagnostics and explicit session epochs and turn attempts.
 - Normalize the trace into an immutable graph with timing and usage summaries.
 - Serve a local web explorer with a timeline, hierarchy, search, error filters and a details panel.
 - Start with offline import. Live capture, hosted accounts, report sharing and support for other coding agents are outside this change.

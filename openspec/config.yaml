@@ -6,8 +6,7 @@ context: |
   Keep OpenSpec structural headings and SHALL/MUST keywords in English.
   Pi Trace is an MIT-licensed local trace explorer for Pi coding agents.
   Rust owns import, correlation, timing and usage semantics; the browser owns presentation.
-  Initial compatibility targets pi-trace-extension events.jsonl at commit
-  5441bcca041e3b3a203aee91c68e8ea809e6aa27.
+  Initial compatibility targets the events.jsonl format in docs/upstream-compatibility.md.
   Pi extensions run in JavaScript or TypeScript. Rust initially imports existing traces.
   Raw traces can contain secrets. Use synthetic fixtures and never commit real traces.
   The repository currently contains a runnable development scaffold, not a trace analyzer.

@@ -1,6 +1,6 @@
 # Pi Trace
 
-A local browser app for inspecting Pi coding agent traces, with a Rust engine. It is intended to help you find slow generations, failed tools and expensive turns in recordings from [pi-trace-extension](https://github.com/npxcnency-ux/pi-trace-extension).
+A local browser app for inspecting Pi coding agent traces, with a Rust engine. It is intended to help you find slow generations, failed tools and expensive turns in recorded sessions.
 
 The server and connection check work. Trace import, analysis and the timeline are still planned in [OpenSpec](openspec/changes/bootstrap-trace-explorer/proposal.md). This version does not record or load traces.
 
@@ -41,4 +41,4 @@ Run `npm run check` before submitting changes. Use `npm version patch --no-git-t
 
 See [contributing](CONTRIBUTING.md) and [compatibility notes](docs/upstream-compatibility.md). Use synthetic fixtures: real recordings can contain credentials, prompts and private code.
 
-[MIT licensed](LICENSE). Pi Trace is independent of Pi and retains the [upstream notice](THIRD_PARTY_NOTICES.md).
+[MIT licensed](LICENSE). Pi Trace is an independent project.

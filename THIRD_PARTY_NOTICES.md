@@ -1,8 +1,8 @@
 # Third-party notices
 
-## pi-trace-extension
+## MIT notice
 
-This project is an independent Rust and Svelte implementation inspired by the trace format and workflows of [pi-trace-extension](https://github.com/npxcnency-ux/pi-trace-extension). Compatibility research used commit `5441bcca041e3b3a203aee91c68e8ea809e6aa27`. Retain the following notice with any ported upstream logic or substantial portions. The bootstrap does not include the upstream collector or Python renderer.
+The following third-party copyright and permission notice is retained.
 
 MIT License
 
