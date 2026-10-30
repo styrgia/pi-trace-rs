@@ -1,0 +1,24 @@
+{
+  "attemptId": "a1",
+  "live": {
+    "activity": {
+      "pendingBytes": 0,
+      "readBytes": 0,
+      "recordCount": 0,
+      "sourceCount": 1
+    },
+    "error": {
+      "code": "source_unreadable",
+      "message": "The recording source could not be read.",
+      "source": {
+        "file": "events.jsonl",
+        "line": 1
+      }
+    },
+    "revision": 1,
+    "runId": "synthetic-run",
+    "state": "stopped"
+  },
+  "snapshotId": "synthetic-snapshot",
+  "state": "ready"
+}

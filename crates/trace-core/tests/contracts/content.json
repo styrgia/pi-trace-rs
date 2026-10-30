@@ -1,0 +1,16 @@
+{
+  "input": {
+    "limitBytes": 8192,
+    "state": "available",
+    "text": "{\"messages\":[{\"content\":\"FABRICATED_PRIVATE_PROMPT <script>inert()</script>\",\"role\":\"user\"}]}",
+    "truncated": false
+  },
+  "nodeId": "n4",
+  "output": {
+    "limitBytes": 8192,
+    "state": "available",
+    "text": "Synthetic assistant output.",
+    "truncated": false
+  },
+  "snapshotId": "synthetic-snapshot"
+}

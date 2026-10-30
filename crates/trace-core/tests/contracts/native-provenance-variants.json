@@ -1,0 +1,119 @@
+[
+  {
+    "byteRange": {
+      "end": "310",
+      "start": "88"
+    },
+    "kind": "jsonl",
+    "line": "2",
+    "provider": "pi",
+    "source": "project/session.jsonl",
+    "storeId": "synthetic-store"
+  },
+  {
+    "byteRange": null,
+    "kind": "jsonl",
+    "line": "1",
+    "provider": "claude",
+    "source": "project/agent-child.jsonl",
+    "storeId": "synthetic-store"
+  },
+  {
+    "decodedByteRange": {
+      "end": "9007199254740999",
+      "start": "9007199254740993"
+    },
+    "decodedLine": "3",
+    "encoding": "zstd",
+    "kind": "compressedJsonl",
+    "provider": "codex",
+    "source": "archived_sessions/rollout.jsonl.zst",
+    "storeId": "synthetic-store"
+  },
+  {
+    "decodedByteRange": null,
+    "decodedLine": "1",
+    "encoding": "zstd",
+    "kind": "compressedJsonl",
+    "provider": "codex",
+    "source": "archived_sessions/rollout.jsonl.zst",
+    "storeId": "synthetic-store"
+  },
+  {
+    "kind": "json",
+    "pointer": "/toolUseId",
+    "provider": "claude",
+    "source": "project/subagents/agent-child.meta.json",
+    "storeId": "synthetic-store"
+  },
+  {
+    "kind": "json",
+    "pointer": null,
+    "provider": "claude",
+    "source": "project/subagents/agent-child.meta.json",
+    "storeId": "synthetic-store"
+  },
+  {
+    "database": "opencode.db",
+    "field": {
+      "column": "data",
+      "kind": "json",
+      "pointer": "/tokens/cache/read"
+    },
+    "kind": "sqlite",
+    "observedRevision": "synthetic-source-revision",
+    "primaryKey": [
+      {
+        "column": "id",
+        "value": {
+          "kind": "text",
+          "value": "m"
+        }
+      }
+    ],
+    "provider": "opencode",
+    "schemaProfile": "opencode-v2-2.1.4",
+    "storeId": "synthetic-store",
+    "table": "session_message"
+  },
+  {
+    "database": "opencode.db",
+    "field": {
+      "column": "count",
+      "kind": "column"
+    },
+    "kind": "sqlite",
+    "observedRevision": "synthetic-source-revision",
+    "primaryKey": [
+      {
+        "column": "ordinal",
+        "value": {
+          "kind": "integer",
+          "value": "9223372036854775807"
+        }
+      },
+      {
+        "column": "digest",
+        "value": {
+          "hex": "00ff",
+          "kind": "blob"
+        }
+      }
+    ],
+    "provider": "opencode",
+    "schemaProfile": "typed-key-contract",
+    "storeId": "synthetic-store",
+    "table": "fixture"
+  },
+  {
+    "database": "opencode.db",
+    "field": null,
+    "kind": "sqlite",
+    "observedRevision": "synthetic-source-revision",
+    "primaryKey": [],
+    "provider": "opencode",
+    "schemaProfile": "opencode-v2-2.1.4",
+    "storeId": "synthetic-store",
+    "table": "sqlite_schema"
+  }
+]

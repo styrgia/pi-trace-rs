@@ -1,0 +1,316 @@
+{
+  "context": null,
+  "diagnosticIds": [],
+  "metadata": {
+    "model": null,
+    "sessionId": "s",
+    "stepIndex": null,
+    "toolName": "fabricated",
+    "turnIndex": null
+  },
+  "nativeUsage": [],
+  "observation": {
+    "bar": null,
+    "context": false,
+    "depth": 2,
+    "duration": {
+      "meaning": "recorded tool execution boundaries",
+      "state": "derived",
+      "valueMs": 10.0
+    },
+    "hasChildren": false,
+    "id": "synthetic-node-3",
+    "kind": "tool",
+    "label": "fabricated",
+    "labelTruncated": false,
+    "match": true,
+    "outcome": "success",
+    "parentId": "synthetic-node-2",
+    "source": {
+      "database": "opencode.db",
+      "field": {
+        "column": "data",
+        "kind": "json",
+        "pointer": "/content/0"
+      },
+      "kind": "sqlite",
+      "observedRevision": "synthetic-source-revision",
+      "primaryKey": [
+        {
+          "column": "id",
+          "value": {
+            "kind": "text",
+            "value": "m"
+          }
+        }
+      ],
+      "provider": "opencode",
+      "schemaProfile": "opencode-v2-2.1.4",
+      "storeId": "synthetic-store",
+      "table": "session_message"
+    },
+    "spanId": "synthetic-span-3",
+    "spanUsage": {
+      "childAttribution": "notApplicable",
+      "inclusive": {
+        "cacheReadTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "contributorCount": 0,
+        "fallbackContributions": 0,
+        "inputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "observedGenerations": 0,
+        "outputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "provenance": "none",
+        "totalGenerations": 0,
+        "totalTokens": {
+          "state": "notApplicable",
+          "value": null
+        }
+      },
+      "own": {
+        "cacheReadTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "contributorCount": 0,
+        "fallbackContributions": 0,
+        "inputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "observedGenerations": 0,
+        "outputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "provenance": "none",
+        "totalGenerations": 0,
+        "totalTokens": {
+          "state": "notApplicable",
+          "value": null
+        }
+      }
+    }
+  },
+  "relationship": {
+    "executionParentId": "synthetic-node-2",
+    "state": "linked"
+  },
+  "relationships": [],
+  "requestToHeaders": {
+    "meaning": "request to headers is not persisted",
+    "state": "unknown",
+    "valueMs": null
+  },
+  "selectedContext": null,
+  "snapshotId": "synthetic-snapshot",
+  "sources": [
+    {
+      "database": "opencode.db",
+      "field": {
+        "column": "data",
+        "kind": "json",
+        "pointer": "/content/0"
+      },
+      "kind": "sqlite",
+      "observedRevision": "synthetic-source-revision",
+      "primaryKey": [
+        {
+          "column": "id",
+          "value": {
+            "kind": "text",
+            "value": "m"
+          }
+        }
+      ],
+      "provider": "opencode",
+      "schemaProfile": "opencode-v2-2.1.4",
+      "storeId": "synthetic-store",
+      "table": "session_message"
+    }
+  ],
+  "spanUsage": {
+    "childAttribution": "notApplicable",
+    "contributorCount": 0,
+    "evidence": [],
+    "inclusive": {
+      "cacheReadTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "contributorCount": 0,
+      "fallbackContributions": 0,
+      "inputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "observedGenerations": 0,
+      "outputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "provenance": "none",
+      "totalGenerations": 0,
+      "totalTokens": {
+        "state": "notApplicable",
+        "value": null
+      }
+    },
+    "omittedCount": 0,
+    "own": {
+      "cacheReadTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "contributorCount": 0,
+      "fallbackContributions": 0,
+      "inputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "observedGenerations": 0,
+      "outputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "provenance": "none",
+      "totalGenerations": 0,
+      "totalTokens": {
+        "state": "notApplicable",
+        "value": null
+      }
+    }
+  },
+  "timingEvidence": [],
+  "toolInspection": {
+    "arguments": {
+      "availability": "available",
+      "localTruncated": false,
+      "previewUtf8Bytes": 2,
+      "selectedSize": null,
+      "source": {
+        "database": "opencode.db",
+        "field": {
+          "column": "data",
+          "kind": "json",
+          "pointer": "/content/0/state/input"
+        },
+        "kind": "sqlite",
+        "observedRevision": "synthetic-source-revision",
+        "primaryKey": [
+          {
+            "column": "id",
+            "value": {
+              "kind": "text",
+              "value": "m"
+            }
+          }
+        ],
+        "provider": "opencode",
+        "schemaProfile": "opencode-v2-2.1.4",
+        "storeId": "synthetic-store",
+        "table": "session_message"
+      },
+      "sourceTruncation": "unknown"
+    },
+    "callId": "tool",
+    "callIdSource": {
+      "database": "opencode.db",
+      "field": {
+        "column": "data",
+        "kind": "json",
+        "pointer": "/content/0"
+      },
+      "kind": "sqlite",
+      "observedRevision": "synthetic-source-revision",
+      "primaryKey": [
+        {
+          "column": "id",
+          "value": {
+            "kind": "text",
+            "value": "m"
+          }
+        }
+      ],
+      "provider": "opencode",
+      "schemaProfile": "opencode-v2-2.1.4",
+      "storeId": "synthetic-store",
+      "table": "session_message"
+    },
+    "callIdTruncated": false,
+    "result": {
+      "availability": "available",
+      "localTruncated": false,
+      "originalLength": null,
+      "previewUtf8Bytes": 37,
+      "recordedField": null,
+      "selectedSize": null,
+      "source": {
+        "database": "opencode.db",
+        "field": {
+          "column": "data",
+          "kind": "json",
+          "pointer": "/content/0/state/content"
+        },
+        "kind": "sqlite",
+        "observedRevision": "synthetic-source-revision",
+        "primaryKey": [
+          {
+            "column": "id",
+            "value": {
+              "kind": "text",
+              "value": "m"
+            }
+          }
+        ],
+        "provider": "opencode",
+        "schemaProfile": "opencode-v2-2.1.4",
+        "storeId": "synthetic-store",
+        "table": "session_message"
+      },
+      "sourceTruncation": "unknown"
+    },
+    "retention": "complete"
+  },
+  "ttft": {
+    "meaning": "first-token latency is not persisted",
+    "state": "unknown",
+    "valueMs": null
+  },
+  "usage": {
+    "cacheReadTokens": null,
+    "cacheWriteTokens": null,
+    "cost": null,
+    "fallbackSource": null,
+    "inputTokens": null,
+    "observedGenerations": 0,
+    "outputTokens": null,
+    "state": "unknown",
+    "totalGenerations": 0,
+    "totalTokens": null
+  }
+}

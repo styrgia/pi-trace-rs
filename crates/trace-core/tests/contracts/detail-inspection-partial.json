@@ -1,0 +1,307 @@
+{
+  "snapshotId": "synthetic-inspection-snapshot",
+  "spanUsage": {
+    "own": {
+      "inputTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "outputTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheReadTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "totalTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "provenance": "none",
+      "observedGenerations": 0,
+      "totalGenerations": 1,
+      "fallbackContributions": 0,
+      "contributorCount": 0
+    },
+    "inclusive": {
+      "inputTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "outputTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheReadTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "totalTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "provenance": "none",
+      "observedGenerations": 0,
+      "totalGenerations": 1,
+      "fallbackContributions": 0,
+      "contributorCount": 0
+    },
+    "childAttribution": "notApplicable",
+    "evidence": [],
+    "contributorCount": 0,
+    "omittedCount": 0
+  },
+  "observation": {
+    "id": "n4",
+    "spanId": "synthetic-span-n4",
+    "spanUsage": {
+      "own": {
+        "inputTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "outputTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheReadTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "totalTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "provenance": "none",
+        "observedGenerations": 0,
+        "totalGenerations": 1,
+        "fallbackContributions": 0,
+        "contributorCount": 0
+      },
+      "inclusive": {
+        "inputTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "outputTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheReadTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "totalTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "provenance": "none",
+        "observedGenerations": 0,
+        "totalGenerations": 1,
+        "fallbackContributions": 0,
+        "contributorCount": 0
+      },
+      "childAttribution": "notApplicable"
+    },
+    "kind": "generation",
+    "label": "Generation 4",
+    "labelTruncated": false,
+    "parentId": "n3",
+    "depth": 3,
+    "hasChildren": false,
+    "match": true,
+    "context": false,
+    "outcome": "incomplete",
+    "duration": {
+      "state": "unknown",
+      "valueMs": null,
+      "meaning": "elapsed duration"
+    },
+    "bar": null,
+    "source": {
+      "file": "events.jsonl",
+      "line": 4
+    }
+  },
+  "relationship": {
+    "state": "linked",
+    "executionParentId": "n3"
+  },
+  "requestToHeaders": {
+    "state": "unknown",
+    "valueMs": null,
+    "meaning": "request to HTTP headers"
+  },
+  "ttft": {
+    "state": "unknown",
+    "valueMs": null,
+    "meaning": "exact first token latency is not recorded by this source"
+  },
+  "usage": {
+    "state": "unknown",
+    "inputTokens": null,
+    "outputTokens": null,
+    "cacheReadTokens": null,
+    "cacheWriteTokens": null,
+    "totalTokens": null,
+    "cost": null,
+    "observedGenerations": 0,
+    "totalGenerations": 1,
+    "fallbackSource": null
+  },
+  "metadata": {
+    "sessionId": null,
+    "model": null,
+    "toolName": null,
+    "turnIndex": null,
+    "stepIndex": 1
+  },
+  "context": {
+    "coverage": "partial",
+    "retention": "complete",
+    "shape": "messages",
+    "requestField": "messages",
+    "source": {
+      "file": "events.jsonl",
+      "line": 5
+    },
+    "payloadSize": {
+      "compactJsonBytes": 247,
+      "textChars": 89
+    },
+    "counts": {
+      "messages": 2,
+      "toolDefinitions": 0,
+      "skillDescriptors": 1,
+      "unclassifiedItems": 1
+    },
+    "categories": [
+      {
+        "kind": "systemInstructions",
+        "count": 1,
+        "size": {
+          "compactJsonBytes": 117,
+          "textChars": 87
+        },
+        "textCoverage": "complete"
+      },
+      {
+        "kind": "user",
+        "count": 1,
+        "size": {
+          "compactJsonBytes": 85,
+          "textChars": 2
+        },
+        "textCoverage": "partial"
+      },
+      {
+        "kind": "other",
+        "count": 1,
+        "size": {
+          "compactJsonBytes": 41,
+          "textChars": null
+        },
+        "textCoverage": "unsupported"
+      }
+    ],
+    "largestItems": [
+      {
+        "ordinal": 0,
+        "kind": "systemInstructions",
+        "size": {
+          "compactJsonBytes": 117,
+          "textChars": 87
+        },
+        "textCoverage": "complete"
+      },
+      {
+        "ordinal": 1,
+        "kind": "user",
+        "size": {
+          "compactJsonBytes": 85,
+          "textChars": 2
+        },
+        "textCoverage": "partial"
+      },
+      {
+        "ordinal": 2,
+        "kind": "other",
+        "size": {
+          "compactJsonBytes": 41,
+          "textChars": null
+        },
+        "textCoverage": "unsupported"
+      }
+    ],
+    "largestTools": [],
+    "largestSkills": [
+      {
+        "name": "alpha",
+        "nameTruncated": false,
+        "ordinal": 0,
+        "size": {
+          "compactJsonBytes": 35,
+          "textChars": 33
+        }
+      }
+    ],
+    "sections": [
+      {
+        "id": 0,
+        "parentId": null,
+        "kind": "skills",
+        "itemOrdinal": 0,
+        "textChars": 87
+      },
+      {
+        "id": 1,
+        "parentId": 0,
+        "kind": "available_skills",
+        "itemOrdinal": 0,
+        "textChars": 70
+      }
+    ],
+    "omitted": {
+      "items": 0,
+      "tools": 0,
+      "skills": 0,
+      "sections": 0
+    },
+    "contextInputTokens": null,
+    "contextInputTokensExact": {
+      "state": "unknown",
+      "value": null
+    }
+  },
+  "toolInspection": null,
+  "sources": [
+    {
+      "file": "events.jsonl",
+      "line": 4
+    },
+    {
+      "file": "events.jsonl",
+      "line": 5
+    }
+  ],
+  "diagnosticIds": [
+    "d4"
+  ]
+}

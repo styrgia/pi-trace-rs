@@ -1,0 +1,318 @@
+{
+  "snapshotId": "synthetic-inspection-snapshot",
+  "spanUsage": {
+    "own": {
+      "inputTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "outputTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheReadTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "totalTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "provenance": "none",
+      "observedGenerations": 0,
+      "totalGenerations": 1,
+      "fallbackContributions": 0,
+      "contributorCount": 0
+    },
+    "inclusive": {
+      "inputTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "outputTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheReadTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "totalTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "provenance": "none",
+      "observedGenerations": 0,
+      "totalGenerations": 1,
+      "fallbackContributions": 0,
+      "contributorCount": 0
+    },
+    "childAttribution": "notApplicable",
+    "evidence": [],
+    "contributorCount": 0,
+    "omittedCount": 0
+  },
+  "observation": {
+    "id": "n4",
+    "spanId": "synthetic-span-n4",
+    "spanUsage": {
+      "own": {
+        "inputTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "outputTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheReadTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "totalTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "provenance": "none",
+        "observedGenerations": 0,
+        "totalGenerations": 1,
+        "fallbackContributions": 0,
+        "contributorCount": 0
+      },
+      "inclusive": {
+        "inputTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "outputTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheReadTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "totalTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "provenance": "none",
+        "observedGenerations": 0,
+        "totalGenerations": 1,
+        "fallbackContributions": 0,
+        "contributorCount": 0
+      },
+      "childAttribution": "notApplicable"
+    },
+    "kind": "generation",
+    "label": "Generation 4",
+    "labelTruncated": false,
+    "parentId": "n3",
+    "depth": 3,
+    "hasChildren": false,
+    "match": true,
+    "context": false,
+    "outcome": "incomplete",
+    "duration": {
+      "state": "unknown",
+      "valueMs": null,
+      "meaning": "elapsed duration"
+    },
+    "bar": null,
+    "source": {
+      "file": "events.jsonl",
+      "line": 4
+    }
+  },
+  "relationship": {
+    "state": "linked",
+    "executionParentId": "n3"
+  },
+  "requestToHeaders": {
+    "state": "unknown",
+    "valueMs": null,
+    "meaning": "request to HTTP headers"
+  },
+  "ttft": {
+    "state": "unknown",
+    "valueMs": null,
+    "meaning": "exact first token latency is not recorded by this source"
+  },
+  "usage": {
+    "state": "unknown",
+    "inputTokens": null,
+    "outputTokens": null,
+    "cacheReadTokens": null,
+    "cacheWriteTokens": null,
+    "totalTokens": null,
+    "cost": null,
+    "observedGenerations": 0,
+    "totalGenerations": 1,
+    "fallbackSource": null
+  },
+  "metadata": {
+    "sessionId": null,
+    "model": null,
+    "toolName": null,
+    "turnIndex": null,
+    "stepIndex": 1
+  },
+  "context": {
+    "coverage": "complete",
+    "retention": "complete",
+    "shape": "providerInput",
+    "requestField": "input",
+    "source": {
+      "file": "events.jsonl",
+      "line": 5
+    },
+    "payloadSize": {
+      "compactJsonBytes": 237,
+      "textChars": 63
+    },
+    "counts": {
+      "messages": 2,
+      "toolDefinitions": 1,
+      "skillDescriptors": null,
+      "unclassifiedItems": 0
+    },
+    "categories": [
+      {
+        "kind": "systemInstructions",
+        "count": 1,
+        "size": {
+          "compactJsonBytes": 31,
+          "textChars": 29
+        },
+        "textCoverage": "complete"
+      },
+      {
+        "kind": "toolDefinitions",
+        "count": 1,
+        "size": {
+          "compactJsonBytes": 74,
+          "textChars": null
+        },
+        "textCoverage": "unsupported"
+      },
+      {
+        "kind": "assistantHistory",
+        "count": 1,
+        "size": {
+          "compactJsonBytes": 48,
+          "textChars": 15
+        },
+        "textCoverage": "complete"
+      },
+      {
+        "kind": "toolOutputs",
+        "count": 1,
+        "size": {
+          "compactJsonBytes": 47,
+          "textChars": 19
+        },
+        "textCoverage": "complete"
+      }
+    ],
+    "largestItems": [
+      {
+        "ordinal": 1,
+        "kind": "toolDefinitions",
+        "size": {
+          "compactJsonBytes": 74,
+          "textChars": null
+        },
+        "textCoverage": "unsupported"
+      },
+      {
+        "ordinal": 2,
+        "kind": "assistantHistory",
+        "size": {
+          "compactJsonBytes": 48,
+          "textChars": 15
+        },
+        "textCoverage": "complete"
+      },
+      {
+        "ordinal": 3,
+        "kind": "toolOutputs",
+        "size": {
+          "compactJsonBytes": 47,
+          "textChars": 19
+        },
+        "textCoverage": "complete"
+      },
+      {
+        "ordinal": 0,
+        "kind": "systemInstructions",
+        "size": {
+          "compactJsonBytes": 31,
+          "textChars": 29
+        },
+        "textCoverage": "complete"
+      }
+    ],
+    "largestTools": [
+      {
+        "name": "supported-name",
+        "nameTruncated": false,
+        "ordinal": 0,
+        "size": {
+          "compactJsonBytes": 74,
+          "textChars": null
+        }
+      }
+    ],
+    "largestSkills": [],
+    "sections": [
+      {
+        "id": 0,
+        "parentId": null,
+        "kind": "rules",
+        "itemOrdinal": 0,
+        "textChars": 29
+      }
+    ],
+    "omitted": {
+      "items": 0,
+      "tools": 0,
+      "skills": null,
+      "sections": 0
+    },
+    "contextInputTokens": null,
+    "contextInputTokensExact": {
+      "state": "unknown",
+      "value": null
+    }
+  },
+  "toolInspection": null,
+  "sources": [
+    {
+      "file": "events.jsonl",
+      "line": 4
+    },
+    {
+      "file": "events.jsonl",
+      "line": 5
+    }
+  ],
+  "diagnosticIds": [
+    "d4"
+  ]
+}

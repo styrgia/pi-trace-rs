@@ -6,6 +6,16 @@ See `proposal.md` for the motivation. The repository is new. Its first commit su
 
 The upstream TypeScript extension records Pi events as JSONL; a Python renderer builds a static HTML report. The compatibility baseline is commit `5441bcca041e3b3a203aee91c68e8ea809e6aa27`. Pi extensions run in JavaScript or TypeScript, so a Rust rewrite initially imports the collector's files. An RPC adapter would be a separate source with different capture fidelity.
 
+## Implementation ownership refinement
+
+`../implement-svelte-trace-workbench/design.md` and its task list own the implementation and acceptance of all unfinished work here. The trace-import and trace-analysis specs in this bootstrap change remain the semantic baseline. Repository foundation tasks remain historical scaffold evidence.
+
+The accepted startup refinement binds the listener and serves health and the shell before a blocking import worker runs. Health describes process readiness; empty/importing/ready/failed workspace state describes the recording. Only a completed immutable snapshot publishes trace views. The implemented command is to be `pi-trace-rs serve <directory>` through the native executable, npm launcher, or Pi command. No-argument startup remains an empty workspace.
+
+The snapshot-scoped API in the workbench design supersedes the unscoped API sketch below. Overview, observation pages, node details, content, and diagnostics belong to `/api/v1/snapshots/{snapshot}/...`. Failed-source-only retry does not select another path.
+
+Acceptance owners are workbench sections 2 for bootstrap import tasks 2.1 and 2.3, sections 2 and 3 for 2.2 and 2.4, documentation and launch checks for 2.5, section 3 for analysis 3.1 through 3.5, sections 4 and 5 for service 4.1 and 4.2, section 6 for UI 4.3 through 4.7, and section 7 for acceptance 5.1 through 5.3. There is one implementation path. A task remains unchecked until its mapped scenarios pass.
+
 ## Goals / Non-Goals
 
 **Goals:** Keep one owner of trace semantics, expose a small versioned HTTP presentation contract and support a clear local investigation workflow. Make source uncertainty and incomplete measurements visible.

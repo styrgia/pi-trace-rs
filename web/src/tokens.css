@@ -1,0 +1,95 @@
+/* Hallmark · scope: app · genre: atmospheric · theme: custom · redesign: full · modes: dark+light
+ * idea: a rose-lit investigation desk · signature: linked rose selection and spectral waterfall
+ * axes: dark/rounded-sans/chromatic-rose · posture: restrained · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H5 E4 S4 R4 V4 · weakest: R; keep glow on the Pi mark and meaningful trace signals. */
+:root {
+  color-scheme: dark;
+  --font-body: 'Nunito Sans', 'Segoe UI', Arial, sans-serif;
+  --font-display: var(--font-body);
+  --font-code: ui-monospace, 'SFMono-Regular', Consolas, monospace;
+  --color-paper: #121016;
+  --surface: #1a1621;
+  --surface-soft: #211b2a;
+  --surface-hover: #30263b;
+  --surface-raised: #292132;
+  --color-ink: #f6edf7;
+  --color-ink-2: #d9cbdc;
+  --color-muted: #b3a2bd;
+  --color-rule: #392d43;
+  --rule-strong: #796584;
+  --color-accent: #f5a6d4;
+  --color-accent-deep: #fac3e3;
+  --color-accent-soft: #382338;
+  --color-accent-ink: #32172a;
+  --color-focus: #ffcae9;
+  --generation: #a0e9c5;
+  --generation-soft: #243e35;
+  --tool: #c8b0f7;
+  --tool-soft: #382e4c;
+  --danger: #ffafa6;
+  --danger-soft: #482d31;
+  --warning: #e9ce8a;
+  --warning-soft: #3b3327;
+  --clear: transparent;
+  --glow-accent: 0 0 20px #ee8cc82b;
+  --glow-generation: 0 0 12px #a0e9c52b;
+  --glow-tool: 0 0 12px #c8b0f72b;
+  --shadow-float: 0 12px 36px #08060d66;
+  --text-md: 14px;
+  --text-title: 20px;
+  --text-section: 22px;
+  --text-display: 32px;
+  --display-weight: 800;
+  --tracking-display: -.035em;
+  --dur-short: 140ms;
+  --container: 1560px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 40px;
+  --space-3xl: 48px;
+  --space-4xl: 64px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+}
+:root[data-theme='light'] {
+  color-scheme: light;
+  --color-paper: #f5edf3;
+  --surface: #fffafd;
+  --surface-soft: #f5edf5;
+  --surface-hover: #eaddea;
+  --surface-raised: #f0e5ef;
+  --color-ink: #322637;
+  --color-ink-2: #4d3c54;
+  --color-muted: #705b78;
+  --color-rule: #e1d2e2;
+  --rule-strong: #9b829e;
+  --color-accent: #993668;
+  --color-accent-deep: #7f2955;
+  --color-accent-soft: #f4dfed;
+  --color-accent-ink: #fff4fb;
+  --color-focus: #963066;
+  --generation: #296d50;
+  --generation-soft: #ddefe5;
+  --tool: #70509f;
+  --tool-soft: #ece3f7;
+  --danger: #a53d3d;
+  --danger-soft: #f8e5e2;
+  --warning: #7b5e18;
+  --warning-soft: #f6edda;
+  --glow-accent: 0 0 16px #99366810;
+  --glow-generation: 0 0 12px #296d5010;
+  --glow-tool: 0 0 12px #70509f10;
+  --shadow-float: 0 12px 36px #32263720;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('/fonts/nunito-sans-latin.woff2') format('woff2');
+}

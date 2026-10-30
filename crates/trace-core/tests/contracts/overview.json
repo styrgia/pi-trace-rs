@@ -1,0 +1,72 @@
+{
+  "diagnosticCount": 0,
+  "duration": {
+    "meaning": "global valid timeline span",
+    "state": "derived",
+    "valueMs": 10120.0
+  },
+  "generationCount": 4,
+  "interactionCount": 1,
+  "measurementAvailability": {
+    "duration": true,
+    "requestToHeaders": true,
+    "ttft": false
+  },
+  "model": "synthetic-model",
+  "nodeCount": 14,
+  "recordCount": 37,
+  "sessionCount": 1,
+  "snapshotId": "synthetic-snapshot",
+  "source": {
+    "file": "events.jsonl",
+    "line": 1
+  },
+  "sourceCount": 1,
+  "timeline": {
+    "durationMs": 10120.0,
+    "endMs": 10120.0,
+    "startMs": 0.0
+  },
+  "title": "Recording",
+  "tokenAccounting": {
+    "cacheReadTokens": {
+      "state": "exact",
+      "value": "80"
+    },
+    "cacheWriteTokens": {
+      "state": "exact",
+      "value": "0"
+    },
+    "contributorCount": 4,
+    "fallbackContributions": 0,
+    "inputTokens": {
+      "state": "exact",
+      "value": "400"
+    },
+    "observedGenerations": 4,
+    "outputTokens": {
+      "state": "exact",
+      "value": "200"
+    },
+    "provenance": "aggregate",
+    "totalGenerations": 4,
+    "totalTokens": {
+      "state": "exact",
+      "value": "680"
+    }
+  },
+  "toolCount": 6,
+  "turnCount": 2,
+  "usage": {
+    "cacheReadTokens": 80,
+    "cacheWriteTokens": 0,
+    "cost": null,
+    "fallbackSource": null,
+    "inputTokens": 400,
+    "observedGenerations": 4,
+    "outputTokens": 200,
+    "state": "complete",
+    "totalGenerations": 4,
+    "totalTokens": 680
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "error": {
+    "code": "unknown_snapshot",
+    "message": "The immutable session snapshot is not retained.",
+    "source": null
+  },
+  "retryAfterMs": null
+}

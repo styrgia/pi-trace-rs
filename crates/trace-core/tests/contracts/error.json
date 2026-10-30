@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "unknown_node",
+    "message": "The observation is unavailable in this snapshot.",
+    "source": null
+  }
+}

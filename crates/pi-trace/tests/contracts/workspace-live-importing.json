@@ -1,0 +1,11 @@
+{
+  "attemptId": "a1",
+  "live": {
+    "activity": null,
+    "error": null,
+    "revision": null,
+    "runId": "synthetic-run",
+    "state": "catchingUp"
+  },
+  "state": "importing"
+}

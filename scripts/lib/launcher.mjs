@@ -4,6 +4,8 @@ import { constants } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { resolve } from "node:path";
 import { setTimeout as delay } from "node:timers/promises";
+import { homedir } from "node:os";
+import { resolveSystemConfig } from "./system-config.mjs";
 
 export const packageRoot = fileURLToPath(new URL("../../", import.meta.url));
 
@@ -15,6 +17,8 @@ export function createLauncher({
   startupTimeout = 10_000,
   shutdownTimeout = 1500,
   onOutput = () => {},
+  env = process.env,
+  home = homedir(),
 } = {}) {
   const url = `http://127.0.0.1:${port}`;
   let activity;
@@ -22,6 +26,8 @@ export function createLauncher({
   let running;
   let stopping;
   let disposed = false;
+  let stopRevision = 0;
+  const configuring = new Set();
 
   function spawnOwned(command, commandArgs, onStdout = () => {}) {
     const child = spawn(command, commandArgs, {
@@ -29,7 +35,7 @@ export function createLauncher({
       stdio: ["ignore", "pipe", "pipe"],
       shell: false,
       detached: process.platform === "linux",
-      env: { ...process.env, CARGO_TARGET_DIR: resolve(root, "target") },
+      env: { ...env, CARGO_TARGET_DIR: resolve(root, "target") },
     });
     const handle = { child, output: "", ended: false, error: undefined };
     handle.closed = new Promise((resolveExit) => {
@@ -74,15 +80,21 @@ export function createLauncher({
     if (signal.aborted) throw new Error("Pi Trace operation cancelled.");
   }
 
-  async function exclusive(kind, operation) {
+  async function exclusive(kind, operation, source = null, mode = "offline", configuration = null) {
     if (disposed) throw new Error("The Pi Trace launcher has shut down.");
     if (stopping) await stopping;
     if (disposed) throw new Error("The Pi Trace launcher has shut down.");
+    if (kind === "build" && configuring.size > 0) throw new Error("Pi Trace start is in progress.");
     if (activity) {
-      if (activity.kind === kind) return activity.promise;
+      if (activity.kind === kind) {
+        if (kind === "start" && activity.mode !== mode) throw modeConflict();
+        if (kind === "start" && activity.source !== source) throw sourceConflict();
+        if (kind === "start" && activity.configuration !== configuration) throw configurationConflict();
+        return activity.promise;
+      }
       throw new Error(`Pi Trace ${activity.kind} is in progress.`);
     }
-    const current = { kind, controller: new AbortController() };
+    const current = { kind, source, mode, configuration, controller: new AbortController() };
     activity = current;
     current.promise = operation(current.controller.signal).finally(() => {
       if (activity === current) activity = undefined;
@@ -128,9 +140,49 @@ export function createLauncher({
     });
   }
 
-  async function start() {
+  function sourceConflict() {
+    return new Error("Pi Trace is already starting or running with a different source. Stop Pi Trace before selecting another recording.");
+  }
+
+  function modeConflict() {
+    return new Error("Pi Trace is already starting or running in a different mode. Stop Pi Trace before switching between offline, watch, and system.");
+  }
+
+  function configurationConflict() {
+    return new Error("Pi Trace is already starting or running with a different provider configuration. Stop Pi Trace before changing system roots or disabled providers.");
+  }
+
+  async function start({ source: selectedSource, cwd = process.cwd(), mode = "offline", roots, disabledProviders } = {}) {
+    if (disposed) throw new Error("The Pi Trace launcher has shut down.");
+    if (!["offline", "watch", "system"].includes(mode)) throw new Error("Pi Trace mode must be offline, watch, or system.");
+    if (mode === "system" && selectedSource != null) throw new Error("System mode accepts provider roots, not a recording directory.");
+    if (mode !== "system" && (roots !== undefined || disabledProviders !== undefined)) throw new Error("Provider roots and disabled providers require system mode.");
+    if (mode === "watch" && selectedSource == null) throw new Error("Pi Trace needs a recording directory after watch.");
+    if (selectedSource != null && (typeof selectedSource !== "string" || selectedSource.length === 0)) {
+      throw new Error("Pi Trace needs a recording directory after serve or watch.");
+    }
+    const source = selectedSource == null ? null : resolve(cwd, selectedSource);
+    let system = null;
+    if (mode === "system") {
+      const revision = stopRevision;
+      const pending = resolveSystemConfig({ roots, disabledProviders, cwd, env, home });
+      configuring.add(pending);
+      try {
+        system = await pending;
+      } finally {
+        configuring.delete(pending);
+      }
+      if (disposed) throw new Error("The Pi Trace launcher has shut down.");
+      if (revision !== stopRevision) throw new Error("Pi Trace operation cancelled.");
+    }
+    const configuration = system?.identity ?? null;
     return exclusive("start", async (signal) => {
-      if (running) return running.app;
+      if (running) {
+        if (running.mode !== mode) throw modeConflict();
+        if (running.source !== source) throw sourceConflict();
+        if (running.configuration !== configuration) throw configurationConflict();
+        return running.app;
+      }
       let command = executable;
       try {
         if (!command) {
@@ -151,7 +203,8 @@ export function createLauncher({
       }
       checkCancelled(signal);
       let stdout = "";
-      const handle = spawnOwned(command, args, (chunk) => { stdout = (stdout + chunk).slice(-4096); });
+      const commandArgs = system ? [...args, ...system.args] : source === null ? args : [...args, mode === "watch" ? "watch" : "serve", source];
+      const handle = spawnOwned(command, commandArgs, (chunk) => { stdout = (stdout + chunk).slice(-4096); });
       const deadline = Date.now() + startupTimeout;
       try {
         while (Date.now() < deadline) {
@@ -171,7 +224,7 @@ export function createLauncher({
                 checkCancelled(signal);
                 if (handle.ended) continue;
                 const app = { url, closed: handle.closed };
-                running = { handle, app };
+                running = { handle, app, source, mode, configuration };
                 return app;
               }
             } catch {
@@ -185,15 +238,18 @@ export function createLauncher({
         await terminate(handle);
         throw error;
       }
-    });
+    }, source, mode, configuration);
   }
 
   function stop() {
     if (stopping) return stopping;
+    stopRevision++;
+    const pendingConfiguration = [...configuring];
     const pending = activity;
     pending?.controller.abort();
     stopping = (async () => {
       if (owned) await terminate(owned);
+      await Promise.allSettled(pendingConfiguration);
       await pending?.promise.catch(() => {});
     })().finally(() => { stopping = undefined; });
     return stopping;

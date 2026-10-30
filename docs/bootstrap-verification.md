@@ -1,5 +1,7 @@
 # Bootstrap verification
 
+This is historical scaffold evidence. See [workbench verification](workbench-verification.md) for the implemented importer, API, interface, and package acceptance.
+
 The original scaffold was verified on 2026-10-29 with Rust 1.99.1, Node.js 26.13.0 and npm 11.20.0 on Linux. The development baseline is Node.js 24 and stable Rust. Verification now runs through the root `npm run check` command.
 
 ## Local checks

@@ -1,0 +1,16 @@
+{
+  "input": {
+    "limitBytes": 8192,
+    "state": "unavailable",
+    "text": null,
+    "truncated": false
+  },
+  "nodeId": "synthetic-node-1",
+  "output": {
+    "limitBytes": 8192,
+    "state": "available",
+    "text": "UNIQUE_PRIVATE_BODY_812",
+    "truncated": false
+  },
+  "snapshotId": "synthetic-snapshot"
+}

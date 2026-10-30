@@ -1,0 +1,236 @@
+{
+  "context": null,
+  "diagnosticIds": [],
+  "metadata": {
+    "model": null,
+    "sessionId": null,
+    "stepIndex": null,
+    "toolName": null,
+    "turnIndex": null
+  },
+  "observation": {
+    "bar": {
+      "durationMs": 10.0,
+      "offsetMs": 79.0
+    },
+    "context": false,
+    "depth": 2,
+    "duration": {
+      "meaning": "timestamp interval",
+      "state": "derived",
+      "valueMs": 10.0
+    },
+    "hasChildren": false,
+    "id": "n6",
+    "kind": "turn",
+    "label": "Turn 6",
+    "labelTruncated": false,
+    "match": true,
+    "outcome": "incomplete",
+    "parentId": "n2",
+    "source": {
+      "file": "events.jsonl",
+      "line": 10
+    },
+    "spanId": "synthetic-span-6",
+    "spanUsage": {
+      "childAttribution": "notApplicable",
+      "inclusive": {
+        "cacheReadTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "contributorCount": 1,
+        "fallbackContributions": 1,
+        "inputTokens": {
+          "state": "partial",
+          "value": "5"
+        },
+        "observedGenerations": 0,
+        "outputTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "provenance": "turnSummaryFallback",
+        "totalGenerations": 0,
+        "totalTokens": {
+          "state": "unknown",
+          "value": null
+        }
+      },
+      "own": {
+        "cacheReadTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "contributorCount": 1,
+        "fallbackContributions": 1,
+        "inputTokens": {
+          "state": "partial",
+          "value": "5"
+        },
+        "observedGenerations": 0,
+        "outputTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "provenance": "turnSummaryFallback",
+        "totalGenerations": 0,
+        "totalTokens": {
+          "state": "unknown",
+          "value": null
+        }
+      }
+    }
+  },
+  "relationship": {
+    "executionParentId": "n2",
+    "state": "linked"
+  },
+  "requestToHeaders": {
+    "meaning": "request to HTTP headers",
+    "state": "unknown",
+    "valueMs": null
+  },
+  "snapshotId": "synthetic-edge-snapshot",
+  "sources": [
+    {
+      "file": "events.jsonl",
+      "line": 10
+    },
+    {
+      "file": "events.jsonl",
+      "line": 11
+    },
+    {
+      "file": "events.jsonl",
+      "line": 12
+    }
+  ],
+  "spanUsage": {
+    "childAttribution": "notApplicable",
+    "contributorCount": 1,
+    "evidence": [
+      {
+        "accounting": {
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 1,
+          "inputTokens": {
+            "state": "partial",
+            "value": "5"
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "provenance": "turnSummaryFallback",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "unknown",
+            "value": null
+          }
+        },
+        "contributionId": "synthetic-span-6-t",
+        "reportedTotal": {
+          "state": "unknown",
+          "value": null
+        },
+        "source": {
+          "file": "events.jsonl",
+          "line": 11
+        },
+        "spanId": "synthetic-span-6"
+      }
+    ],
+    "inclusive": {
+      "cacheReadTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "contributorCount": 1,
+      "fallbackContributions": 1,
+      "inputTokens": {
+        "state": "partial",
+        "value": "5"
+      },
+      "observedGenerations": 0,
+      "outputTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "provenance": "turnSummaryFallback",
+      "totalGenerations": 0,
+      "totalTokens": {
+        "state": "unknown",
+        "value": null
+      }
+    },
+    "omittedCount": 0,
+    "own": {
+      "cacheReadTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "contributorCount": 1,
+      "fallbackContributions": 1,
+      "inputTokens": {
+        "state": "partial",
+        "value": "5"
+      },
+      "observedGenerations": 0,
+      "outputTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "provenance": "turnSummaryFallback",
+      "totalGenerations": 0,
+      "totalTokens": {
+        "state": "unknown",
+        "value": null
+      }
+    }
+  },
+  "toolInspection": null,
+  "ttft": {
+    "meaning": "exact first token latency is not recorded by this source",
+    "state": "unknown",
+    "valueMs": null
+  },
+  "usage": {
+    "cacheReadTokens": null,
+    "cacheWriteTokens": null,
+    "cost": null,
+    "fallbackSource": "turnSummary",
+    "inputTokens": 5,
+    "observedGenerations": 0,
+    "outputTokens": null,
+    "state": "partial",
+    "totalGenerations": 0,
+    "totalTokens": null
+  }
+}

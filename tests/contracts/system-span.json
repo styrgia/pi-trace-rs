@@ -1,0 +1,420 @@
+{
+  "context": null,
+  "diagnosticIds": [],
+  "metadata": {
+    "model": null,
+    "sessionId": "fabricated-session",
+    "stepIndex": null,
+    "toolName": null,
+    "turnIndex": null
+  },
+  "nativeUsage": [
+    {
+      "accepted": true,
+      "accounting": {
+        "cacheReadTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "contributorCount": 1,
+        "fallbackContributions": 0,
+        "inputTokens": {
+          "state": "exact",
+          "value": "2"
+        },
+        "observedGenerations": 1,
+        "outputTokens": {
+          "state": "exact",
+          "value": "3"
+        },
+        "provenance": "nativeResponse",
+        "totalGenerations": 1,
+        "totalTokens": {
+          "state": "unknown",
+          "value": null
+        }
+      },
+      "authority": "piPinnedProfile",
+      "id": "entry:m1",
+      "nativeCounters": [
+        {
+          "name": "input",
+          "source": {
+            "byteRange": {
+              "end": "212",
+              "start": "85"
+            },
+            "kind": "jsonl",
+            "line": "2",
+            "provider": "pi",
+            "source": "example.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "2"
+          }
+        },
+        {
+          "name": "output",
+          "source": {
+            "byteRange": {
+              "end": "212",
+              "start": "85"
+            },
+            "kind": "jsonl",
+            "line": "2",
+            "provider": "pi",
+            "source": "example.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "3"
+          }
+        },
+        {
+          "name": "cacheRead",
+          "source": {
+            "byteRange": {
+              "end": "212",
+              "start": "85"
+            },
+            "kind": "jsonl",
+            "line": "2",
+            "provider": "pi",
+            "source": "example.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "unknown",
+            "value": null
+          }
+        },
+        {
+          "name": "cacheWrite",
+          "source": {
+            "byteRange": {
+              "end": "212",
+              "start": "85"
+            },
+            "kind": "jsonl",
+            "line": "2",
+            "provider": "pi",
+            "source": "example.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "unknown",
+            "value": null
+          }
+        },
+        {
+          "name": "total",
+          "source": {
+            "byteRange": {
+              "end": "212",
+              "start": "85"
+            },
+            "kind": "jsonl",
+            "line": "2",
+            "provider": "pi",
+            "source": "example.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "unknown",
+            "value": null
+          }
+        },
+        {
+          "name": "reasoning",
+          "source": {
+            "byteRange": {
+              "end": "212",
+              "start": "85"
+            },
+            "kind": "jsonl",
+            "line": "2",
+            "provider": "pi",
+            "source": "example.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "unknown",
+            "value": null
+          }
+        }
+      ],
+      "normalization": [],
+      "role": {
+        "category": "modelResponse",
+        "kind": "contribution"
+      },
+      "source": {
+        "byteRange": {
+          "end": "212",
+          "start": "85"
+        },
+        "kind": "jsonl",
+        "line": "2",
+        "provider": "pi",
+        "source": "example.jsonl",
+        "storeId": "synthetic-store"
+      }
+    }
+  ],
+  "observation": {
+    "bar": null,
+    "context": false,
+    "depth": 1,
+    "duration": {
+      "meaning": "execution duration is not persisted",
+      "state": "unknown",
+      "valueMs": null
+    },
+    "hasChildren": false,
+    "id": "synthetic-node-1",
+    "kind": "generation",
+    "label": "Assistant",
+    "labelTruncated": false,
+    "match": true,
+    "outcome": "unknown",
+    "parentId": "synthetic-node-0",
+    "source": {
+      "byteRange": {
+        "end": "212",
+        "start": "85"
+      },
+      "kind": "jsonl",
+      "line": "2",
+      "provider": "pi",
+      "source": "example.jsonl",
+      "storeId": "synthetic-store"
+    },
+    "spanId": "synthetic-span-1",
+    "spanUsage": {
+      "childAttribution": "notApplicable",
+      "inclusive": {
+        "cacheReadTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "contributorCount": 1,
+        "fallbackContributions": 0,
+        "inputTokens": {
+          "state": "exact",
+          "value": "2"
+        },
+        "observedGenerations": 1,
+        "outputTokens": {
+          "state": "exact",
+          "value": "3"
+        },
+        "provenance": "nativeResponse",
+        "totalGenerations": 1,
+        "totalTokens": {
+          "state": "unknown",
+          "value": null
+        }
+      },
+      "own": {
+        "cacheReadTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "contributorCount": 1,
+        "fallbackContributions": 0,
+        "inputTokens": {
+          "state": "exact",
+          "value": "2"
+        },
+        "observedGenerations": 1,
+        "outputTokens": {
+          "state": "exact",
+          "value": "3"
+        },
+        "provenance": "nativeResponse",
+        "totalGenerations": 1,
+        "totalTokens": {
+          "state": "unknown",
+          "value": null
+        }
+      }
+    }
+  },
+  "relationship": {
+    "executionParentId": null,
+    "state": "root"
+  },
+  "relationships": [],
+  "requestToHeaders": {
+    "meaning": "request to headers is not persisted",
+    "state": "unknown",
+    "valueMs": null
+  },
+  "selectedContext": "m1",
+  "snapshotId": "synthetic-snapshot",
+  "sources": [
+    {
+      "byteRange": {
+        "end": "212",
+        "start": "85"
+      },
+      "kind": "jsonl",
+      "line": "2",
+      "provider": "pi",
+      "source": "example.jsonl",
+      "storeId": "synthetic-store"
+    },
+    {
+      "byteRange": {
+        "end": "212",
+        "start": "85"
+      },
+      "kind": "jsonl",
+      "line": "2",
+      "provider": "pi",
+      "source": "example.jsonl",
+      "storeId": "synthetic-store"
+    }
+  ],
+  "spanUsage": {
+    "childAttribution": "notApplicable",
+    "contributorCount": 1,
+    "evidence": [
+      {
+        "accounting": {
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "2"
+          },
+          "observedGenerations": 1,
+          "outputTokens": {
+            "state": "exact",
+            "value": "3"
+          },
+          "provenance": "nativeResponse",
+          "totalGenerations": 1,
+          "totalTokens": {
+            "state": "unknown",
+            "value": null
+          }
+        },
+        "contributionId": "entry:m1",
+        "reportedTotal": {
+          "state": "unknown",
+          "value": null
+        },
+        "source": {
+          "byteRange": {
+            "end": "212",
+            "start": "85"
+          },
+          "kind": "jsonl",
+          "line": "2",
+          "provider": "pi",
+          "source": "example.jsonl",
+          "storeId": "synthetic-store"
+        },
+        "spanId": "synthetic-span-1"
+      }
+    ],
+    "inclusive": {
+      "cacheReadTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "contributorCount": 1,
+      "fallbackContributions": 0,
+      "inputTokens": {
+        "state": "exact",
+        "value": "2"
+      },
+      "observedGenerations": 1,
+      "outputTokens": {
+        "state": "exact",
+        "value": "3"
+      },
+      "provenance": "nativeResponse",
+      "totalGenerations": 1,
+      "totalTokens": {
+        "state": "unknown",
+        "value": null
+      }
+    },
+    "omittedCount": 0,
+    "own": {
+      "cacheReadTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "contributorCount": 1,
+      "fallbackContributions": 0,
+      "inputTokens": {
+        "state": "exact",
+        "value": "2"
+      },
+      "observedGenerations": 1,
+      "outputTokens": {
+        "state": "exact",
+        "value": "3"
+      },
+      "provenance": "nativeResponse",
+      "totalGenerations": 1,
+      "totalTokens": {
+        "state": "unknown",
+        "value": null
+      }
+    }
+  },
+  "timingEvidence": [],
+  "toolInspection": null,
+  "ttft": {
+    "meaning": "first-token latency is not persisted",
+    "state": "unknown",
+    "valueMs": null
+  },
+  "usage": {
+    "cacheReadTokens": null,
+    "cacheWriteTokens": null,
+    "cost": null,
+    "fallbackSource": null,
+    "inputTokens": null,
+    "observedGenerations": 0,
+    "outputTokens": null,
+    "state": "unknown",
+    "totalGenerations": 0,
+    "totalTokens": null
+  }
+}

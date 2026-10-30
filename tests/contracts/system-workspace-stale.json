@@ -1,0 +1,23 @@
+{
+  "capabilities": {
+    "executionParents": "partial",
+    "messages": "complete",
+    "persistence": "persistedRecordsOnly",
+    "profile": "pi-session-v3",
+    "timing": "partial",
+    "usage": "partial"
+  },
+  "error": {
+    "code": "source_unavailable",
+    "message": "The configured source is unavailable or cannot be read safely.",
+    "source": null
+  },
+  "processState": "unknown",
+  "progress": "current",
+  "revision": 1,
+  "runId": "synthetic-run",
+  "sessionId": "synthetic-session",
+  "snapshotId": "synthetic-snapshot",
+  "sourceRevision": "synthetic-source-revision",
+  "state": "stale"
+}

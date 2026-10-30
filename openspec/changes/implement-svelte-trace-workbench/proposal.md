@@ -12,6 +12,7 @@ The HTML workbench provides a clearer trace report, but the Svelte application s
 - Select one recording directory explicitly at process startup. Preserve no-argument startup as an empty workspace, package-relative assets, and the launcher's ownership of its process.
 - Provide real loading, empty, import-error, unavailable-service, and recovery states. Keep prompts, arguments, and result bodies behind an explicit bounded content request.
 - Verify a synthetic recording through the real importer, HTTP API, and browser, followed by the existing package verification before distribution.
+- Extend the accepted workbench with tool-call evidence and a request Context inspector. Rust measures complete request composition before preview truncation, while the UI distinguishes catalogue sizes, history, recorded request usage, and cumulative session usage. Arguments and result bodies retain their explicit reveal boundary.
 
 ## Capabilities
 

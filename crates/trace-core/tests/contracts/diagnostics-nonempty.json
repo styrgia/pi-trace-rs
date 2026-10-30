@@ -1,0 +1,67 @@
+{
+  "items": [
+    {
+      "code": "unknown_event",
+      "id": "d1",
+      "message": "The event type is unsupported.",
+      "nodeId": null,
+      "source": {
+        "file": "events.jsonl",
+        "line": 13
+      }
+    },
+    {
+      "code": "malformed_record",
+      "id": "d2",
+      "message": "The physical record is not valid JSON.",
+      "nodeId": null,
+      "source": {
+        "file": "events.jsonl",
+        "line": 14
+      }
+    },
+    {
+      "code": "incomplete_tail",
+      "id": "d3",
+      "message": "The final physical record is incomplete.",
+      "nodeId": null,
+      "source": {
+        "file": "events.jsonl",
+        "line": 15
+      }
+    },
+    {
+      "code": "missing_end",
+      "id": "d4",
+      "message": "The observation has no completion record.",
+      "nodeId": "n1",
+      "source": {
+        "file": "events.jsonl",
+        "line": 1
+      }
+    },
+    {
+      "code": "invalid_interval",
+      "id": "d5",
+      "message": "The recorded wall-clock interval is invalid.",
+      "nodeId": "n4",
+      "source": {
+        "file": "events.jsonl",
+        "line": 6
+      }
+    },
+    {
+      "code": "missing_end",
+      "id": "d6",
+      "message": "The observation has no completion record.",
+      "nodeId": "n5",
+      "source": {
+        "file": "events.jsonl",
+        "line": 7
+      }
+    }
+  ],
+  "nextCursor": null,
+  "snapshotId": "synthetic-edge-snapshot",
+  "total": 6
+}

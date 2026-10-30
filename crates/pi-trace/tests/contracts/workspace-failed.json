@@ -1,0 +1,12 @@
+{
+  "state": "failed",
+  "attemptId": "a1",
+  "error": {
+    "code": "source_unreadable",
+    "message": "The recording source could not be read.",
+    "source": {
+      "file": "events.jsonl",
+      "line": 1
+    }
+  }
+}

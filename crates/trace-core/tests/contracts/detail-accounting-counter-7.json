@@ -1,0 +1,253 @@
+{
+  "snapshotId": "synthetic-accounting-snapshot",
+  "spanUsage": {
+    "own": {
+      "inputTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "outputTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheReadTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "totalTokens": {
+        "state": "exact",
+        "value": "9007199254740993"
+      },
+      "provenance": "recordedGeneration",
+      "observedGenerations": 1,
+      "totalGenerations": 1,
+      "fallbackContributions": 0,
+      "contributorCount": 1
+    },
+    "inclusive": {
+      "inputTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "outputTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheReadTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "totalTokens": {
+        "state": "exact",
+        "value": "9007199254740993"
+      },
+      "provenance": "recordedGeneration",
+      "observedGenerations": 1,
+      "totalGenerations": 1,
+      "fallbackContributions": 0,
+      "contributorCount": 1
+    },
+    "childAttribution": "notApplicable",
+    "evidence": [
+      {
+        "contributionId": "synthetic-contribution-0",
+        "spanId": "synthetic-span-n4",
+        "source": {
+          "file": "events.jsonl",
+          "line": 2
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "9007199254740993"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "9007199254740993"
+        }
+      }
+    ],
+    "contributorCount": 1,
+    "omittedCount": 0
+  },
+  "observation": {
+    "id": "n4",
+    "spanId": "synthetic-span-n4",
+    "spanUsage": {
+      "own": {
+        "inputTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "outputTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheReadTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "totalTokens": {
+          "state": "exact",
+          "value": "9007199254740993"
+        },
+        "provenance": "recordedGeneration",
+        "observedGenerations": 1,
+        "totalGenerations": 1,
+        "fallbackContributions": 0,
+        "contributorCount": 1
+      },
+      "inclusive": {
+        "inputTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "outputTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheReadTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "totalTokens": {
+          "state": "exact",
+          "value": "9007199254740993"
+        },
+        "provenance": "recordedGeneration",
+        "observedGenerations": 1,
+        "totalGenerations": 1,
+        "fallbackContributions": 0,
+        "contributorCount": 1
+      },
+      "childAttribution": "notApplicable"
+    },
+    "kind": "generation",
+    "label": "Generation 4",
+    "labelTruncated": false,
+    "parentId": "n3",
+    "depth": 3,
+    "hasChildren": false,
+    "match": true,
+    "context": false,
+    "outcome": "unknown",
+    "duration": {
+      "state": "unknown",
+      "valueMs": null,
+      "meaning": "completed generation"
+    },
+    "bar": null,
+    "source": {
+      "file": "events.jsonl",
+      "line": 1
+    }
+  },
+  "relationship": {
+    "state": "linked",
+    "executionParentId": "n3"
+  },
+  "requestToHeaders": {
+    "state": "unknown",
+    "valueMs": null,
+    "meaning": "request to HTTP headers"
+  },
+  "ttft": {
+    "state": "unknown",
+    "valueMs": null,
+    "meaning": "exact first token latency is not recorded by this source"
+  },
+  "usage": {
+    "state": "partial",
+    "inputTokens": null,
+    "outputTokens": null,
+    "cacheReadTokens": null,
+    "cacheWriteTokens": null,
+    "totalTokens": 9007199254740993,
+    "cost": null,
+    "observedGenerations": 1,
+    "totalGenerations": 1,
+    "fallbackSource": null
+  },
+  "metadata": {
+    "sessionId": null,
+    "model": null,
+    "toolName": null,
+    "turnIndex": null,
+    "stepIndex": null
+  },
+  "context": {
+    "coverage": "missing",
+    "retention": "complete",
+    "shape": "missing",
+    "requestField": null,
+    "source": null,
+    "payloadSize": null,
+    "counts": null,
+    "categories": [],
+    "largestItems": [],
+    "largestTools": [],
+    "largestSkills": [],
+    "sections": [],
+    "omitted": {
+      "items": null,
+      "tools": null,
+      "skills": null,
+      "sections": null
+    },
+    "contextInputTokens": null,
+    "contextInputTokensExact": {
+      "state": "unknown",
+      "value": null
+    }
+  },
+  "toolInspection": null,
+  "sources": [
+    {
+      "file": "events.jsonl",
+      "line": 1
+    },
+    {
+      "file": "events.jsonl",
+      "line": 2
+    }
+  ],
+  "diagnosticIds": []
+}

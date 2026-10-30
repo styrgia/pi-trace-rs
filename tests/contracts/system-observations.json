@@ -1,0 +1,182 @@
+{
+  "items": [
+    {
+      "bar": null,
+      "context": false,
+      "depth": 0,
+      "duration": {
+        "meaning": "execution duration is not persisted",
+        "state": "unknown",
+        "valueMs": null
+      },
+      "hasChildren": true,
+      "id": "synthetic-node-0",
+      "kind": "session",
+      "label": "Session",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "unknown",
+      "parentId": null,
+      "source": {
+        "byteRange": {
+          "end": "85",
+          "start": "0"
+        },
+        "kind": "jsonl",
+        "line": "1",
+        "provider": "pi",
+        "source": "example.jsonl",
+        "storeId": "synthetic-store"
+      },
+      "spanId": "synthetic-span-0",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "2"
+          },
+          "observedGenerations": 1,
+          "outputTokens": {
+            "state": "exact",
+            "value": "3"
+          },
+          "provenance": "aggregate",
+          "totalGenerations": 1,
+          "totalTokens": {
+            "state": "unknown",
+            "value": null
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        }
+      }
+    },
+    {
+      "bar": null,
+      "context": false,
+      "depth": 1,
+      "duration": {
+        "meaning": "execution duration is not persisted",
+        "state": "unknown",
+        "valueMs": null
+      },
+      "hasChildren": false,
+      "id": "synthetic-node-1",
+      "kind": "generation",
+      "label": "Assistant",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "unknown",
+      "parentId": "synthetic-node-0",
+      "source": {
+        "byteRange": {
+          "end": "212",
+          "start": "85"
+        },
+        "kind": "jsonl",
+        "line": "2",
+        "provider": "pi",
+        "source": "example.jsonl",
+        "storeId": "synthetic-store"
+      },
+      "spanId": "synthetic-span-1",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "2"
+          },
+          "observedGenerations": 1,
+          "outputTokens": {
+            "state": "exact",
+            "value": "3"
+          },
+          "provenance": "nativeResponse",
+          "totalGenerations": 1,
+          "totalTokens": {
+            "state": "unknown",
+            "value": null
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "2"
+          },
+          "observedGenerations": 1,
+          "outputTokens": {
+            "state": "exact",
+            "value": "3"
+          },
+          "provenance": "nativeResponse",
+          "totalGenerations": 1,
+          "totalTokens": {
+            "state": "unknown",
+            "value": null
+          }
+        }
+      }
+    }
+  ],
+  "nextCursor": null,
+  "snapshotId": "synthetic-snapshot",
+  "totalMatches": 2,
+  "totalRows": 2
+}

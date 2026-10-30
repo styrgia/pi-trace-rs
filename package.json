@@ -1,6 +1,6 @@
 {
   "name": "pi-trace-rs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Local trace explorer for Pi coding agents, powered by Rust.",
   "type": "module",
   "license": "MIT",
@@ -12,7 +12,12 @@
   "bugs": {
     "url": "https://github.com/styrgia/pi-trace-rs/issues"
   },
-  "keywords": ["pi-package", "pi", "tracing", "rust"],
+  "keywords": [
+    "pi-package",
+    "pi",
+    "tracing",
+    "rust"
+  ],
   "engines": {
     "node": ">=24"
   },
@@ -20,7 +25,9 @@
     "pi-trace-rs": "scripts/start.mjs"
   },
   "pi": {
-    "extensions": ["./extensions/pi-trace.mjs"],
+    "extensions": [
+      "./extensions/pi-trace.mjs"
+    ],
     "changelogPath": "./CHANGELOG.md"
   },
   "peerDependencies": {
@@ -49,6 +56,7 @@
     "build": "node scripts/build.mjs",
     "build:web": "npm --prefix web run build",
     "start": "node scripts/start.mjs",
+    "launch": "npm run build && npm start --",
     "dev": "npm --prefix web run dev",
     "test": "node --test tests/*.test.mjs",
     "check": "npm run version:check && npm test && npm run check:rust && npm run check:web && npm run check:specs",

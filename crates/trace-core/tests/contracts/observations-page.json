@@ -1,0 +1,174 @@
+{
+  "items": [
+    {
+      "bar": {
+        "durationMs": 10120.0,
+        "offsetMs": 0.0
+      },
+      "context": false,
+      "depth": 0,
+      "duration": {
+        "meaning": "timestamp interval",
+        "state": "derived",
+        "valueMs": 10120.0
+      },
+      "hasChildren": true,
+      "id": "n1",
+      "kind": "session",
+      "label": "Session 1",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "success",
+      "parentId": null,
+      "source": {
+        "file": "events.jsonl",
+        "line": 1
+      },
+      "spanId": "synthetic-span-1",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "80"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "contributorCount": 4,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "400"
+          },
+          "observedGenerations": 4,
+          "outputTokens": {
+            "state": "exact",
+            "value": "200"
+          },
+          "provenance": "aggregate",
+          "totalGenerations": 4,
+          "totalTokens": {
+            "state": "exact",
+            "value": "680"
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        }
+      }
+    },
+    {
+      "bar": {
+        "durationMs": 10100.0,
+        "offsetMs": 10.0
+      },
+      "context": false,
+      "depth": 1,
+      "duration": {
+        "meaning": "timestamp interval",
+        "state": "derived",
+        "valueMs": 10100.0
+      },
+      "hasChildren": true,
+      "id": "n2",
+      "kind": "interaction",
+      "label": "Interaction 2",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "success",
+      "parentId": "n1",
+      "source": {
+        "file": "events.jsonl",
+        "line": 2
+      },
+      "spanId": "synthetic-span-2",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "80"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "contributorCount": 4,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "400"
+          },
+          "observedGenerations": 4,
+          "outputTokens": {
+            "state": "exact",
+            "value": "200"
+          },
+          "provenance": "aggregate",
+          "totalGenerations": 4,
+          "totalTokens": {
+            "state": "exact",
+            "value": "680"
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        }
+      }
+    }
+  ],
+  "nextCursor": "synthetic-snapshot.600ee5b00eee7304.2",
+  "snapshotId": "synthetic-snapshot",
+  "totalMatches": 14,
+  "totalRows": 14
+}

@@ -7,9 +7,12 @@ context: |
   Pi Trace is an MIT-licensed local trace explorer for Pi coding agents.
   Rust owns import, correlation, timing and usage semantics; the browser owns presentation.
   Initial compatibility targets the events.jsonl format in docs/upstream-compatibility.md.
-  Pi extensions run in JavaScript or TypeScript. Rust initially imports existing traces.
+  Pi extensions run in JavaScript or TypeScript. Rust reads offline recordings and complete append-only live prefixes.
   Raw traces can contain secrets. Use synthetic fixtures and never commit real traces.
-  The repository currently contains a runnable development scaffold, not a trace analyzer.
+  The repository implements offline import, explicit watch mode, exact per-span accounting, a bounded immutable snapshot API, and a Svelte trace workbench. External capture and publication remain outside this implementation.
+  Explicit system mode adds configured native Codex, Pi Agent, Claude Code and OpenCode stores, bounded catalog discovery, lazy session analysis and session-qualified immutable views.
+  Native provenance, provider token meanings and conservative global input-equivalent retention remain Rust-owned; the browser renders application views and deliberate body reveal.
+  Native core, API, launcher, controlled UI, real browser, declared workload and extracted-package verification use synthetic fixtures. Evidence and compatibility limits are recorded in docs/system-session-verification.md.
 
 rules:
   specs:

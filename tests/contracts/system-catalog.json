@@ -1,0 +1,45 @@
+{
+  "coverage": {
+    "limits": [],
+    "omittedCount": 0,
+    "retainedEntries": 1,
+    "state": "complete"
+  },
+  "items": [
+    {
+      "activityMs": 1700000000000,
+      "capabilities": {
+        "executionParents": "partial",
+        "messages": "complete",
+        "persistence": "persistedRecordsOnly",
+        "profile": "pi-session-v3",
+        "timing": "partial",
+        "usage": "partial"
+      },
+      "id": "synthetic-session",
+      "ingestionState": "discovered",
+      "lastObservedMs": 1700000000000,
+      "nativeId": "fabricated-session",
+      "processState": "unknown",
+      "project": "/fabricated/project",
+      "provider": "pi",
+      "recordingId": "fabricated-session",
+      "relationships": [],
+      "source": {
+        "byteRange": {
+          "end": "85",
+          "start": "0"
+        },
+        "kind": "jsonl",
+        "line": "1",
+        "provider": "pi",
+        "source": "example.jsonl",
+        "storeId": "synthetic-store"
+      },
+      "sourceRevision": "synthetic-source-revision",
+      "storeId": "synthetic-store"
+    }
+  ],
+  "nextCursor": null,
+  "revision": "1"
+}

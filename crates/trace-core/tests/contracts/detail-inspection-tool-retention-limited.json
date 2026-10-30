@@ -1,0 +1,224 @@
+{
+  "context": null,
+  "diagnosticIds": [],
+  "metadata": {
+    "model": null,
+    "sessionId": "synthetic-reference",
+    "stepIndex": 1,
+    "toolName": "read",
+    "turnIndex": null
+  },
+  "observation": {
+    "bar": {
+      "durationMs": 200.0,
+      "offsetMs": 940.0
+    },
+    "context": false,
+    "depth": 4,
+    "duration": {
+      "meaning": "tool duration",
+      "state": "recorded",
+      "valueMs": 200.0
+    },
+    "hasChildren": false,
+    "id": "n5",
+    "kind": "tool",
+    "label": "read",
+    "labelTruncated": false,
+    "match": true,
+    "outcome": "success",
+    "parentId": "n4",
+    "source": {
+      "file": "events.jsonl",
+      "line": 8
+    },
+    "spanId": "synthetic-span-5",
+    "spanUsage": {
+      "childAttribution": "notApplicable",
+      "inclusive": {
+        "cacheReadTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "contributorCount": 0,
+        "fallbackContributions": 0,
+        "inputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "observedGenerations": 0,
+        "outputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "provenance": "none",
+        "totalGenerations": 0,
+        "totalTokens": {
+          "state": "notApplicable",
+          "value": null
+        }
+      },
+      "own": {
+        "cacheReadTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "contributorCount": 0,
+        "fallbackContributions": 0,
+        "inputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "observedGenerations": 0,
+        "outputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "provenance": "none",
+        "totalGenerations": 0,
+        "totalTokens": {
+          "state": "notApplicable",
+          "value": null
+        }
+      }
+    }
+  },
+  "relationship": {
+    "executionParentId": "n4",
+    "state": "linked"
+  },
+  "requestToHeaders": {
+    "meaning": "request to HTTP headers",
+    "state": "unknown",
+    "valueMs": null
+  },
+  "snapshotId": "synthetic-limited-snapshot",
+  "sources": [
+    {
+      "file": "events.jsonl",
+      "line": 8
+    },
+    {
+      "file": "events.jsonl",
+      "line": 9
+    }
+  ],
+  "spanUsage": {
+    "childAttribution": "notApplicable",
+    "contributorCount": 0,
+    "evidence": [],
+    "inclusive": {
+      "cacheReadTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "contributorCount": 0,
+      "fallbackContributions": 0,
+      "inputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "observedGenerations": 0,
+      "outputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "provenance": "none",
+      "totalGenerations": 0,
+      "totalTokens": {
+        "state": "notApplicable",
+        "value": null
+      }
+    },
+    "omittedCount": 0,
+    "own": {
+      "cacheReadTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "contributorCount": 0,
+      "fallbackContributions": 0,
+      "inputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "observedGenerations": 0,
+      "outputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "provenance": "none",
+      "totalGenerations": 0,
+      "totalTokens": {
+        "state": "notApplicable",
+        "value": null
+      }
+    }
+  },
+  "toolInspection": {
+    "arguments": {
+      "availability": "available",
+      "localTruncated": false,
+      "previewUtf8Bytes": 59,
+      "selectedSize": null,
+      "source": {
+        "file": "events.jsonl",
+        "line": 8
+      },
+      "sourceTruncation": "unknown"
+    },
+    "callId": null,
+    "callIdSource": {
+      "file": "events.jsonl",
+      "line": 8
+    },
+    "callIdTruncated": false,
+    "result": {
+      "availability": "available",
+      "localTruncated": false,
+      "originalLength": null,
+      "previewUtf8Bytes": 72,
+      "recordedField": null,
+      "selectedSize": null,
+      "source": {
+        "file": "events.jsonl",
+        "line": 9
+      },
+      "sourceTruncation": "unknown"
+    },
+    "retention": "retentionLimited"
+  },
+  "ttft": {
+    "meaning": "exact first token latency is not recorded by this source",
+    "state": "unknown",
+    "valueMs": null
+  },
+  "usage": {
+    "cacheReadTokens": null,
+    "cacheWriteTokens": null,
+    "cost": null,
+    "fallbackSource": null,
+    "inputTokens": null,
+    "observedGenerations": 0,
+    "outputTokens": null,
+    "state": "unknown",
+    "totalGenerations": 0,
+    "totalTokens": null
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "snapshotId": "synthetic-inspection-snapshot",
+  "spanUsage": {
+    "own": {
+      "inputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "outputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "cacheReadTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "totalTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "provenance": "none",
+      "observedGenerations": 0,
+      "totalGenerations": 0,
+      "fallbackContributions": 0,
+      "contributorCount": 0
+    },
+    "inclusive": {
+      "inputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "outputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "cacheReadTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "totalTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "provenance": "none",
+      "observedGenerations": 0,
+      "totalGenerations": 0,
+      "fallbackContributions": 0,
+      "contributorCount": 0
+    },
+    "childAttribution": "notApplicable",
+    "evidence": [],
+    "contributorCount": 0,
+    "omittedCount": 0
+  },
+  "observation": {
+    "id": "n5",
+    "spanId": "synthetic-span-n5",
+    "spanUsage": {
+      "own": {
+        "inputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "outputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "cacheReadTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "totalTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "provenance": "none",
+        "observedGenerations": 0,
+        "totalGenerations": 0,
+        "fallbackContributions": 0,
+        "contributorCount": 0
+      },
+      "inclusive": {
+        "inputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "outputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "cacheReadTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "totalTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "provenance": "none",
+        "observedGenerations": 0,
+        "totalGenerations": 0,
+        "fallbackContributions": 0,
+        "contributorCount": 0
+      },
+      "childAttribution": "notApplicable"
+    },
+    "kind": "tool",
+    "label": "read",
+    "labelTruncated": false,
+    "parentId": "n4",
+    "depth": 4,
+    "hasChildren": false,
+    "match": true,
+    "context": false,
+    "outcome": "success",
+    "duration": {
+      "state": "unknown",
+      "valueMs": null,
+      "meaning": "tool duration"
+    },
+    "bar": null,
+    "source": {
+      "file": "events.jsonl",
+      "line": 6
+    }
+  },
+  "relationship": {
+    "state": "linked",
+    "executionParentId": "n4"
+  },
+  "requestToHeaders": {
+    "state": "unknown",
+    "valueMs": null,
+    "meaning": "request to HTTP headers"
+  },
+  "ttft": {
+    "state": "unknown",
+    "valueMs": null,
+    "meaning": "exact first token latency is not recorded by this source"
+  },
+  "usage": {
+    "state": "unknown",
+    "inputTokens": null,
+    "outputTokens": null,
+    "cacheReadTokens": null,
+    "cacheWriteTokens": null,
+    "totalTokens": null,
+    "cost": null,
+    "observedGenerations": 0,
+    "totalGenerations": 0,
+    "fallbackSource": null
+  },
+  "metadata": {
+    "sessionId": null,
+    "model": null,
+    "toolName": "read",
+    "turnIndex": null,
+    "stepIndex": null
+  },
+  "context": null,
+  "toolInspection": {
+    "retention": "complete",
+    "callId": "id",
+    "callIdTruncated": false,
+    "callIdSource": {
+      "file": "events.jsonl",
+      "line": 6
+    },
+    "arguments": {
+      "availability": "unavailable",
+      "selectedSize": null,
+      "previewUtf8Bytes": null,
+      "source": {
+        "file": "events.jsonl",
+        "line": 6
+      },
+      "localTruncated": false,
+      "sourceTruncation": "unknown"
+    },
+    "result": {
+      "availability": "available",
+      "selectedSize": {
+        "compactJsonBytes": 7,
+        "textChars": 5
+      },
+      "previewUtf8Bytes": 5,
+      "source": {
+        "file": "events.jsonl",
+        "line": 7
+      },
+      "localTruncated": false,
+      "sourceTruncation": "unknown",
+      "recordedField": "resultPreview",
+      "originalLength": null
+    }
+  },
+  "sources": [
+    {
+      "file": "events.jsonl",
+      "line": 6
+    },
+    {
+      "file": "events.jsonl",
+      "line": 7
+    }
+  ],
+  "diagnosticIds": []
+}

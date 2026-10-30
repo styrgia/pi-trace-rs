@@ -1,0 +1,19 @@
+{
+  "capabilities": {
+    "executionParents": "partial",
+    "messages": "complete",
+    "persistence": "persistedRecordsOnly",
+    "profile": "pi-session-v3",
+    "timing": "partial",
+    "usage": "partial"
+  },
+  "error": null,
+  "processState": "unknown",
+  "progress": "catchingUp",
+  "revision": 0,
+  "runId": null,
+  "sessionId": "synthetic-session",
+  "snapshotId": null,
+  "sourceRevision": "synthetic-source-revision",
+  "state": "loading"
+}

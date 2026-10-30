@@ -1,0 +1,68 @@
+{
+  "diagnosticCount": 0,
+  "duration": {
+    "meaning": "global valid timeline span",
+    "state": "unknown",
+    "valueMs": null
+  },
+  "generationCount": 0,
+  "interactionCount": 0,
+  "measurementAvailability": {
+    "duration": false,
+    "requestToHeaders": false,
+    "ttft": false
+  },
+  "model": null,
+  "nodeCount": 0,
+  "recordCount": 0,
+  "sessionCount": 0,
+  "snapshotId": "synthetic-empty-snapshot",
+  "source": {
+    "file": "events.jsonl",
+    "line": 1
+  },
+  "sourceCount": 1,
+  "timeline": null,
+  "title": "Recording",
+  "tokenAccounting": {
+    "cacheReadTokens": {
+      "state": "unknown",
+      "value": null
+    },
+    "cacheWriteTokens": {
+      "state": "unknown",
+      "value": null
+    },
+    "contributorCount": 0,
+    "fallbackContributions": 0,
+    "inputTokens": {
+      "state": "unknown",
+      "value": null
+    },
+    "observedGenerations": 0,
+    "outputTokens": {
+      "state": "unknown",
+      "value": null
+    },
+    "provenance": "none",
+    "totalGenerations": 0,
+    "totalTokens": {
+      "state": "unknown",
+      "value": null
+    }
+  },
+  "toolCount": 0,
+  "turnCount": 0,
+  "usage": {
+    "cacheReadTokens": null,
+    "cacheWriteTokens": null,
+    "cost": null,
+    "fallbackSource": null,
+    "inputTokens": null,
+    "observedGenerations": 0,
+    "outputTokens": null,
+    "state": "unknown",
+    "totalGenerations": 0,
+    "totalTokens": null
+  }
+}

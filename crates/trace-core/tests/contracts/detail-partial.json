@@ -1,0 +1,236 @@
+{
+  "context": null,
+  "diagnosticIds": [],
+  "metadata": {
+    "model": null,
+    "sessionId": null,
+    "stepIndex": null,
+    "toolName": null,
+    "turnIndex": null
+  },
+  "observation": {
+    "bar": {
+      "durationMs": 68.0,
+      "offsetMs": 1.0
+    },
+    "context": false,
+    "depth": 2,
+    "duration": {
+      "meaning": "timestamp interval",
+      "state": "derived",
+      "valueMs": 68.0
+    },
+    "hasChildren": true,
+    "id": "n3",
+    "kind": "turn",
+    "label": "Turn 3",
+    "labelTruncated": false,
+    "match": true,
+    "outcome": "incomplete",
+    "parentId": "n2",
+    "source": {
+      "file": "events.jsonl",
+      "line": 3
+    },
+    "spanId": "synthetic-span-3",
+    "spanUsage": {
+      "childAttribution": "notApplicable",
+      "inclusive": {
+        "cacheReadTokens": {
+          "state": "partial",
+          "value": "0"
+        },
+        "cacheWriteTokens": {
+          "state": "partial",
+          "value": "0"
+        },
+        "contributorCount": 1,
+        "fallbackContributions": 0,
+        "inputTokens": {
+          "state": "partial",
+          "value": "0"
+        },
+        "observedGenerations": 1,
+        "outputTokens": {
+          "state": "partial",
+          "value": "0"
+        },
+        "provenance": "aggregate",
+        "totalGenerations": 2,
+        "totalTokens": {
+          "state": "partial",
+          "value": "0"
+        }
+      },
+      "own": {
+        "cacheReadTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "contributorCount": 0,
+        "fallbackContributions": 0,
+        "inputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "observedGenerations": 0,
+        "outputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "provenance": "none",
+        "totalGenerations": 0,
+        "totalTokens": {
+          "state": "notApplicable",
+          "value": null
+        }
+      }
+    }
+  },
+  "relationship": {
+    "executionParentId": "n2",
+    "state": "linked"
+  },
+  "requestToHeaders": {
+    "meaning": "request to HTTP headers",
+    "state": "unknown",
+    "valueMs": null
+  },
+  "snapshotId": "synthetic-edge-snapshot",
+  "sources": [
+    {
+      "file": "events.jsonl",
+      "line": 3
+    },
+    {
+      "file": "events.jsonl",
+      "line": 8
+    },
+    {
+      "file": "events.jsonl",
+      "line": 9
+    }
+  ],
+  "spanUsage": {
+    "childAttribution": "notApplicable",
+    "contributorCount": 1,
+    "evidence": [
+      {
+        "accounting": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "observedGenerations": 1,
+          "outputTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "provenance": "recordedGeneration",
+          "totalGenerations": 1,
+          "totalTokens": {
+            "state": "exact",
+            "value": "0"
+          }
+        },
+        "contributionId": "synthetic-span-4-g",
+        "reportedTotal": {
+          "state": "unknown",
+          "value": null
+        },
+        "source": {
+          "file": "events.jsonl",
+          "line": 6
+        },
+        "spanId": "synthetic-span-4"
+      }
+    ],
+    "inclusive": {
+      "cacheReadTokens": {
+        "state": "partial",
+        "value": "0"
+      },
+      "cacheWriteTokens": {
+        "state": "partial",
+        "value": "0"
+      },
+      "contributorCount": 1,
+      "fallbackContributions": 0,
+      "inputTokens": {
+        "state": "partial",
+        "value": "0"
+      },
+      "observedGenerations": 1,
+      "outputTokens": {
+        "state": "partial",
+        "value": "0"
+      },
+      "provenance": "aggregate",
+      "totalGenerations": 2,
+      "totalTokens": {
+        "state": "partial",
+        "value": "0"
+      }
+    },
+    "omittedCount": 0,
+    "own": {
+      "cacheReadTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "contributorCount": 0,
+      "fallbackContributions": 0,
+      "inputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "observedGenerations": 0,
+      "outputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "provenance": "none",
+      "totalGenerations": 0,
+      "totalTokens": {
+        "state": "notApplicable",
+        "value": null
+      }
+    }
+  },
+  "toolInspection": null,
+  "ttft": {
+    "meaning": "exact first token latency is not recorded by this source",
+    "state": "unknown",
+    "valueMs": null
+  },
+  "usage": {
+    "cacheReadTokens": 0,
+    "cacheWriteTokens": 0,
+    "cost": null,
+    "fallbackSource": null,
+    "inputTokens": 0,
+    "observedGenerations": 1,
+    "outputTokens": 0,
+    "state": "partial",
+    "totalGenerations": 2,
+    "totalTokens": 0
+  }
+}

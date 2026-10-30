@@ -1,0 +1,813 @@
+{
+  "snapshotId": "synthetic-accounting-snapshot",
+  "spanUsage": {
+    "own": {
+      "inputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "outputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "cacheReadTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "totalTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "provenance": "none",
+      "observedGenerations": 0,
+      "totalGenerations": 0,
+      "fallbackContributions": 0,
+      "contributorCount": 0
+    },
+    "inclusive": {
+      "inputTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "outputTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheReadTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "unknown",
+        "value": null
+      },
+      "totalTokens": {
+        "state": "exact",
+        "value": "20"
+      },
+      "provenance": "aggregate",
+      "observedGenerations": 20,
+      "totalGenerations": 20,
+      "fallbackContributions": 0,
+      "contributorCount": 20
+    },
+    "childAttribution": "notApplicable",
+    "evidence": [
+      {
+        "contributionId": "synthetic-contribution-0",
+        "spanId": "synthetic-descendant-0",
+        "source": {
+          "file": "events.jsonl",
+          "line": 2
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "1"
+        }
+      },
+      {
+        "contributionId": "synthetic-contribution-1",
+        "spanId": "synthetic-descendant-1",
+        "source": {
+          "file": "events.jsonl",
+          "line": 4
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "1"
+        }
+      },
+      {
+        "contributionId": "synthetic-contribution-2",
+        "spanId": "synthetic-descendant-2",
+        "source": {
+          "file": "events.jsonl",
+          "line": 6
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "1"
+        }
+      },
+      {
+        "contributionId": "synthetic-contribution-3",
+        "spanId": "synthetic-descendant-3",
+        "source": {
+          "file": "events.jsonl",
+          "line": 8
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "1"
+        }
+      },
+      {
+        "contributionId": "synthetic-contribution-4",
+        "spanId": "synthetic-descendant-4",
+        "source": {
+          "file": "events.jsonl",
+          "line": 10
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "1"
+        }
+      },
+      {
+        "contributionId": "synthetic-contribution-5",
+        "spanId": "synthetic-descendant-5",
+        "source": {
+          "file": "events.jsonl",
+          "line": 12
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "1"
+        }
+      },
+      {
+        "contributionId": "synthetic-contribution-6",
+        "spanId": "synthetic-descendant-6",
+        "source": {
+          "file": "events.jsonl",
+          "line": 14
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "1"
+        }
+      },
+      {
+        "contributionId": "synthetic-contribution-7",
+        "spanId": "synthetic-descendant-7",
+        "source": {
+          "file": "events.jsonl",
+          "line": 16
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "1"
+        }
+      },
+      {
+        "contributionId": "synthetic-contribution-8",
+        "spanId": "synthetic-descendant-8",
+        "source": {
+          "file": "events.jsonl",
+          "line": 18
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "1"
+        }
+      },
+      {
+        "contributionId": "synthetic-contribution-9",
+        "spanId": "synthetic-descendant-9",
+        "source": {
+          "file": "events.jsonl",
+          "line": 20
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "1"
+        }
+      },
+      {
+        "contributionId": "synthetic-contribution-10",
+        "spanId": "synthetic-descendant-10",
+        "source": {
+          "file": "events.jsonl",
+          "line": 22
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "1"
+        }
+      },
+      {
+        "contributionId": "synthetic-contribution-11",
+        "spanId": "synthetic-descendant-11",
+        "source": {
+          "file": "events.jsonl",
+          "line": 24
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "1"
+        }
+      },
+      {
+        "contributionId": "synthetic-contribution-12",
+        "spanId": "synthetic-descendant-12",
+        "source": {
+          "file": "events.jsonl",
+          "line": 26
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "1"
+        }
+      },
+      {
+        "contributionId": "synthetic-contribution-13",
+        "spanId": "synthetic-descendant-13",
+        "source": {
+          "file": "events.jsonl",
+          "line": 28
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "1"
+        }
+      },
+      {
+        "contributionId": "synthetic-contribution-14",
+        "spanId": "synthetic-descendant-14",
+        "source": {
+          "file": "events.jsonl",
+          "line": 30
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "1"
+        }
+      },
+      {
+        "contributionId": "synthetic-contribution-15",
+        "spanId": "synthetic-descendant-15",
+        "source": {
+          "file": "events.jsonl",
+          "line": 32
+        },
+        "accounting": {
+          "inputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "outputTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheReadTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "unknown",
+            "value": null
+          },
+          "totalTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "provenance": "recordedGeneration",
+          "observedGenerations": 1,
+          "totalGenerations": 1,
+          "fallbackContributions": 0,
+          "contributorCount": 1
+        },
+        "reportedTotal": {
+          "state": "exact",
+          "value": "1"
+        }
+      }
+    ],
+    "contributorCount": 20,
+    "omittedCount": 4
+  },
+  "observation": {
+    "id": "n1",
+    "spanId": "synthetic-span-n1",
+    "spanUsage": {
+      "own": {
+        "inputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "outputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "cacheReadTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "totalTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "provenance": "none",
+        "observedGenerations": 0,
+        "totalGenerations": 0,
+        "fallbackContributions": 0,
+        "contributorCount": 0
+      },
+      "inclusive": {
+        "inputTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "outputTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheReadTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "unknown",
+          "value": null
+        },
+        "totalTokens": {
+          "state": "exact",
+          "value": "20"
+        },
+        "provenance": "aggregate",
+        "observedGenerations": 20,
+        "totalGenerations": 20,
+        "fallbackContributions": 0,
+        "contributorCount": 20
+      },
+      "childAttribution": "notApplicable"
+    },
+    "kind": "session",
+    "label": "Session 1",
+    "labelTruncated": false,
+    "parentId": null,
+    "depth": 0,
+    "hasChildren": true,
+    "match": true,
+    "context": false,
+    "outcome": "incomplete",
+    "duration": {
+      "state": "unknown",
+      "valueMs": null,
+      "meaning": "elapsed duration"
+    },
+    "bar": null,
+    "source": {
+      "file": "events.jsonl",
+      "line": 1
+    }
+  },
+  "relationship": {
+    "state": "root",
+    "executionParentId": null
+  },
+  "requestToHeaders": {
+    "state": "unknown",
+    "valueMs": null,
+    "meaning": "request to HTTP headers"
+  },
+  "ttft": {
+    "state": "unknown",
+    "valueMs": null,
+    "meaning": "exact first token latency is not recorded by this source"
+  },
+  "usage": {
+    "state": "partial",
+    "inputTokens": null,
+    "outputTokens": null,
+    "cacheReadTokens": null,
+    "cacheWriteTokens": null,
+    "totalTokens": 20,
+    "cost": null,
+    "observedGenerations": 20,
+    "totalGenerations": 20,
+    "fallbackSource": null
+  },
+  "metadata": {
+    "sessionId": null,
+    "model": null,
+    "toolName": null,
+    "turnIndex": null,
+    "stepIndex": null
+  },
+  "context": null,
+  "toolInspection": null,
+  "sources": [
+    {
+      "file": "events.jsonl",
+      "line": 1
+    }
+  ],
+  "diagnosticIds": [
+    "d1",
+    "d4"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "attemptId": "a1",
+  "live": {
+    "activity": {
+      "pendingBytes": 0,
+      "readBytes": 0,
+      "recordCount": 0,
+      "sourceCount": 1
+    },
+    "error": null,
+    "revision": 1,
+    "runId": "synthetic-run",
+    "state": "waiting"
+  },
+  "snapshotId": "synthetic-snapshot",
+  "state": "ready"
+}

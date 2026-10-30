@@ -1,0 +1,58 @@
+{
+  "catalogRevision": "1",
+  "coverage": {
+    "limits": [],
+    "omittedCount": 0,
+    "retainedEntries": 1,
+    "state": "complete"
+  },
+  "disabledProviders": [
+    "codex",
+    "claude",
+    "opencode"
+  ],
+  "limits": {
+    "activeDemandMs": 2000,
+    "analyses": 4,
+    "batchBytes": 1048576,
+    "batchRecords": 2000,
+    "catalogEntries": 10000,
+    "catalogPage": 100,
+    "catalogRevisions": 2,
+    "compressedBytes": 268435456,
+    "databaseConnections": 16,
+    "discoveryBatch": 512,
+    "discoveryEntriesPerPass": 100000,
+    "idleEvictionMs": 60000,
+    "parseJobs": 2,
+    "recordBytes": 1048576,
+    "relatedSources": 1024,
+    "retainedDecodedBytes": 268435456,
+    "sessionDecodedBytes": 134217728,
+    "sessionRecords": 100000,
+    "stores": 16
+  },
+  "metrics": {
+    "activeParseJobs": 0,
+    "databaseConnections": 0,
+    "discoveryBatches": 1,
+    "loadedEntries": 1,
+    "maxActiveParseJobs": 1,
+    "parseJobs": 1,
+    "readBytes": 212,
+    "readRecords": 2,
+    "retainedBytes": 424
+  },
+  "mode": "system",
+  "stores": [
+    {
+      "error": null,
+      "id": "synthetic-store",
+      "provider": "pi",
+      "root": "/synthetic/store",
+      "state": "current",
+      "sweepComplete": true,
+      "visited": 2
+    }
+  ]
+}

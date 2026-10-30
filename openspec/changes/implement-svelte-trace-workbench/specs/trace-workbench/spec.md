@@ -105,3 +105,29 @@ The report SHALL expose source-relative file and line references for observation
 #### Scenario: Investigate on a narrow screen
 - **WHEN** the report is used at 375 pixels wide in either theme
 - **THEN** execution and details remain usable in a stacked layout, controls remain reachable, and the page does not scroll horizontally
+
+### Requirement: Investigate tool calls explicitly
+Selecting a tool SHALL expose its recorded name and invocation evidence in the inspector. The existing deliberate reveal SHALL display clearly labelled arguments and result preview as inert text. Original-result length, available-preview size, truncation, missing fields, source references, duration, and outcome SHALL retain their distinct meanings.
+
+#### Scenario: Identify which file a read call used
+- **WHEN** the user selects a recorded read call and reveals its arguments and result
+- **THEN** the inspector shows the recorded path argument and available result preview with the tool name and source evidence
+- **AND** selecting another observation or reloading hides the bodies again
+
+### Requirement: Inspect what occupies a model request
+The workbench SHALL provide a discoverable Context view and navigation to recorded generations. It SHALL present Rust-supplied composition, units, instruction sections, and bounded largest descriptors. It SHALL distinguish availability from execution, partial from complete evidence, and request input/cache fields from cumulative usage. It SHALL not infer component tokens or relevance.
+
+#### Scenario: Find a request from the session inspector
+- **WHEN** the user opens Context on a session or interaction
+- **THEN** the report provides an explicit way to select a recorded generation and inspect that request
+- **AND** any bounded generation choices disclose their remaining count rather than implying all requests are shown
+
+#### Scenario: Compare catalogue and history contributions
+- **WHEN** the user selects a generation with large tool definitions, a skill catalogue, and tool-result history
+- **THEN** Context shows their separate measured contributions and the largest retained descriptors without revealing their bodies
+- **AND** the user can distinguish cached request input from the session's cumulative token total
+
+#### Scenario: Inspect an unavailable context with keyboard controls
+- **WHEN** the selected generation has missing or unsupported request evidence
+- **THEN** Context explains that state without inventing a breakdown
+- **AND** the same controls remain keyboard reachable and readable at 375 pixels in either theme

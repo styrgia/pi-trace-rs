@@ -123,3 +123,46 @@ Imports SHALL enforce the documented input-byte, record-byte, record-count, and 
 #### Scenario: Resolve an escaping child recording
 - **WHEN** a child path resolves outside the configured root
 - **THEN** the source is refused without reading outside the root or writing into the source directory
+
+### Requirement: Expose measured request composition
+Rust SHALL derive bounded request composition before content-preview truncation and retain the request source reference. The view SHALL distinguish complete, partial, unsupported, missing, and retention-limited evidence. Counts and measurements SHALL describe recorded request structure without inferring relevance or per-component tokens.
+
+#### Scenario: Inspect a large tool and skill catalogue
+- **WHEN** a supported request includes additional tool definitions and instruction text containing complete recognised skill-catalogue delimiters
+- **THEN** its composition includes measured catalogue counts and sizes, instruction-section sizes, and bounded largest descriptor entries
+- **AND** nested sections are identified without adding them again to parent totals or interpreting catalogue availability as actual execution
+
+#### Scenario: Categorise recorded request material
+- **WHEN** a supported request includes instructions, user or assistant history, tool definitions, calls, results, opaque reasoning, and unknown items
+- **THEN** those categories remain distinct and unknown items make coverage partial
+- **AND** opaque reasoning exposes only structural size, never its contents
+
+#### Scenario: Preserve units and unknown attribution
+- **WHEN** a request contains multibyte text and recorded usage
+- **THEN** Unicode scalar character counts and compact reserialized JSON byte counts remain separately named
+- **AND** the view does not claim original HTTP wire size or assign recorded tokens proportionally to components
+
+#### Scenario: Unsupported or bounded composition
+- **WHEN** the request has an unsupported shape or exceeds a documented composition retention or display budget
+- **THEN** the view identifies the unsupported or limited evidence and omitted rows rather than presenting fabricated zero sizes or a silently complete breakdown
+
+### Requirement: Bound context descriptor metadata
+Context metadata MAY include bounded explicit tool and skill descriptor names and measured sizes. It SHALL omit descriptions, locations, prompt snippets, argument values, result text, and reasoning bodies. Descriptor availability SHALL not imply that the named capability was executed.
+
+#### Scenario: Inspect descriptor sizes without revealing descriptions
+- **WHEN** an explicit descriptor name accompanies a private description or location
+- **THEN** normal context views expose only the bounded name and structural size evidence
+- **AND** the description and location do not appear in metadata or convenience labels
+
+### Requirement: Retain tool invocation evidence
+Tool details SHALL retain the recorded tool identity, available call identifier, argument and result availability, bounded-preview sizes, and supported recorded original-result length provenance. Argument values and result text SHALL remain behind the explicit content route. A collector's UTF-16 length of a serialized tool result SHALL not be labelled as UTF-8 bytes, tokens, or the text actually included in a subsequent model request.
+
+#### Scenario: Inspect a source-truncated tool result
+- **WHEN** a tool completion records resultTotalLength and only a shortened resultPreview
+- **THEN** the detail identifies the original length unit and the available preview separately
+- **AND** explicit reveal returns only the recorded bounded preview with its truncation state and source references
+
+#### Scenario: Separate request input from session totals
+- **WHEN** multiple generations repeatedly process cached context
+- **THEN** generation details preserve the recorded non-cached input, cache-read, cache-write, and output fields
+- **AND** cumulative session usage is not returned or described as the size of a single model context

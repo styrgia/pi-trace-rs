@@ -1,0 +1,1170 @@
+{
+  "items": [
+    {
+      "bar": {
+        "durationMs": 10120.0,
+        "offsetMs": 0.0
+      },
+      "context": false,
+      "depth": 0,
+      "duration": {
+        "meaning": "timestamp interval",
+        "state": "derived",
+        "valueMs": 10120.0
+      },
+      "hasChildren": true,
+      "id": "n1",
+      "kind": "session",
+      "label": "Session 1",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "success",
+      "parentId": null,
+      "source": {
+        "file": "events.jsonl",
+        "line": 1
+      },
+      "spanId": "synthetic-span-1",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "80"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "contributorCount": 4,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "400"
+          },
+          "observedGenerations": 4,
+          "outputTokens": {
+            "state": "exact",
+            "value": "200"
+          },
+          "provenance": "aggregate",
+          "totalGenerations": 4,
+          "totalTokens": {
+            "state": "exact",
+            "value": "680"
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        }
+      }
+    },
+    {
+      "bar": {
+        "durationMs": 10100.0,
+        "offsetMs": 10.0
+      },
+      "context": false,
+      "depth": 1,
+      "duration": {
+        "meaning": "timestamp interval",
+        "state": "derived",
+        "valueMs": 10100.0
+      },
+      "hasChildren": true,
+      "id": "n2",
+      "kind": "interaction",
+      "label": "Interaction 2",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "success",
+      "parentId": "n1",
+      "source": {
+        "file": "events.jsonl",
+        "line": 2
+      },
+      "spanId": "synthetic-span-2",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "80"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "contributorCount": 4,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "400"
+          },
+          "observedGenerations": 4,
+          "outputTokens": {
+            "state": "exact",
+            "value": "200"
+          },
+          "provenance": "aggregate",
+          "totalGenerations": 4,
+          "totalTokens": {
+            "state": "exact",
+            "value": "680"
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        }
+      }
+    },
+    {
+      "bar": {
+        "durationMs": 7280.0,
+        "offsetMs": 20.0
+      },
+      "context": false,
+      "depth": 2,
+      "duration": {
+        "meaning": "timestamp interval",
+        "state": "derived",
+        "valueMs": 7280.0
+      },
+      "hasChildren": true,
+      "id": "n3",
+      "kind": "turn",
+      "label": "Turn 3",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "success",
+      "parentId": "n2",
+      "source": {
+        "file": "events.jsonl",
+        "line": 3
+      },
+      "spanId": "synthetic-span-3",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "40"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "contributorCount": 2,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "200"
+          },
+          "observedGenerations": 2,
+          "outputTokens": {
+            "state": "exact",
+            "value": "100"
+          },
+          "provenance": "aggregate",
+          "totalGenerations": 2,
+          "totalTokens": {
+            "state": "exact",
+            "value": "340"
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        }
+      }
+    },
+    {
+      "bar": {
+        "durationMs": 900.0,
+        "offsetMs": 30.0
+      },
+      "context": false,
+      "depth": 3,
+      "duration": {
+        "meaning": "completed generation",
+        "state": "recorded",
+        "valueMs": 900.0
+      },
+      "hasChildren": true,
+      "id": "n4",
+      "kind": "generation",
+      "label": "Generation 4",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "success",
+      "parentId": "n3",
+      "source": {
+        "file": "events.jsonl",
+        "line": 4
+      },
+      "spanId": "synthetic-span-4",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "20"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "100"
+          },
+          "observedGenerations": 1,
+          "outputTokens": {
+            "state": "exact",
+            "value": "50"
+          },
+          "provenance": "recordedGeneration",
+          "totalGenerations": 1,
+          "totalTokens": {
+            "state": "exact",
+            "value": "170"
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "20"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "100"
+          },
+          "observedGenerations": 1,
+          "outputTokens": {
+            "state": "exact",
+            "value": "50"
+          },
+          "provenance": "recordedGeneration",
+          "totalGenerations": 1,
+          "totalTokens": {
+            "state": "exact",
+            "value": "170"
+          }
+        }
+      }
+    },
+    {
+      "bar": {
+        "durationMs": 200.0,
+        "offsetMs": 940.0
+      },
+      "context": false,
+      "depth": 4,
+      "duration": {
+        "meaning": "tool duration",
+        "state": "recorded",
+        "valueMs": 200.0
+      },
+      "hasChildren": false,
+      "id": "n5",
+      "kind": "tool",
+      "label": "read",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "success",
+      "parentId": "n4",
+      "source": {
+        "file": "events.jsonl",
+        "line": 8
+      },
+      "spanId": "synthetic-span-5",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        }
+      }
+    },
+    {
+      "bar": {
+        "durationMs": 200.0,
+        "offsetMs": 1190.0
+      },
+      "context": false,
+      "depth": 4,
+      "duration": {
+        "meaning": "tool duration",
+        "state": "recorded",
+        "valueMs": 200.0
+      },
+      "hasChildren": false,
+      "id": "n6",
+      "kind": "tool",
+      "label": "bash",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "error",
+      "parentId": "n4",
+      "source": {
+        "file": "events.jsonl",
+        "line": 10
+      },
+      "spanId": "synthetic-span-6",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        }
+      }
+    },
+    {
+      "bar": {
+        "durationMs": 5500.0,
+        "offsetMs": 1500.0
+      },
+      "context": false,
+      "depth": 3,
+      "duration": {
+        "meaning": "completed generation",
+        "state": "recorded",
+        "valueMs": 5500.0
+      },
+      "hasChildren": true,
+      "id": "n7",
+      "kind": "generation",
+      "label": "Generation 7",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "success",
+      "parentId": "n3",
+      "source": {
+        "file": "events.jsonl",
+        "line": 12
+      },
+      "spanId": "synthetic-span-7",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "20"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "100"
+          },
+          "observedGenerations": 1,
+          "outputTokens": {
+            "state": "exact",
+            "value": "50"
+          },
+          "provenance": "recordedGeneration",
+          "totalGenerations": 1,
+          "totalTokens": {
+            "state": "exact",
+            "value": "170"
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "20"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "100"
+          },
+          "observedGenerations": 1,
+          "outputTokens": {
+            "state": "exact",
+            "value": "50"
+          },
+          "provenance": "recordedGeneration",
+          "totalGenerations": 1,
+          "totalTokens": {
+            "state": "exact",
+            "value": "170"
+          }
+        }
+      }
+    },
+    {
+      "bar": {
+        "durationMs": 200.0,
+        "offsetMs": 7010.0
+      },
+      "context": false,
+      "depth": 4,
+      "duration": {
+        "meaning": "tool duration",
+        "state": "recorded",
+        "valueMs": 200.0
+      },
+      "hasChildren": false,
+      "id": "n8",
+      "kind": "tool",
+      "label": "search",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "success",
+      "parentId": "n7",
+      "source": {
+        "file": "events.jsonl",
+        "line": 16
+      },
+      "spanId": "synthetic-span-8",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        }
+      }
+    },
+    {
+      "bar": {
+        "durationMs": 2710.0,
+        "offsetMs": 7400.0
+      },
+      "context": false,
+      "depth": 2,
+      "duration": {
+        "meaning": "timestamp interval",
+        "state": "derived",
+        "valueMs": 2710.0
+      },
+      "hasChildren": true,
+      "id": "n9",
+      "kind": "turn",
+      "label": "Turn 9",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "success",
+      "parentId": "n2",
+      "source": {
+        "file": "events.jsonl",
+        "line": 20
+      },
+      "spanId": "synthetic-span-9",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "40"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "contributorCount": 2,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "200"
+          },
+          "observedGenerations": 2,
+          "outputTokens": {
+            "state": "exact",
+            "value": "100"
+          },
+          "provenance": "aggregate",
+          "totalGenerations": 2,
+          "totalTokens": {
+            "state": "exact",
+            "value": "340"
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        }
+      }
+    },
+    {
+      "bar": {
+        "durationMs": 900.0,
+        "offsetMs": 7410.0
+      },
+      "context": false,
+      "depth": 3,
+      "duration": {
+        "meaning": "completed generation",
+        "state": "recorded",
+        "valueMs": 900.0
+      },
+      "hasChildren": true,
+      "id": "n10",
+      "kind": "generation",
+      "label": "Generation 10",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "success",
+      "parentId": "n9",
+      "source": {
+        "file": "events.jsonl",
+        "line": 21
+      },
+      "spanId": "synthetic-span-10",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "20"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "100"
+          },
+          "observedGenerations": 1,
+          "outputTokens": {
+            "state": "exact",
+            "value": "50"
+          },
+          "provenance": "recordedGeneration",
+          "totalGenerations": 1,
+          "totalTokens": {
+            "state": "exact",
+            "value": "170"
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "20"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "100"
+          },
+          "observedGenerations": 1,
+          "outputTokens": {
+            "state": "exact",
+            "value": "50"
+          },
+          "provenance": "recordedGeneration",
+          "totalGenerations": 1,
+          "totalTokens": {
+            "state": "exact",
+            "value": "170"
+          }
+        }
+      }
+    },
+    {
+      "bar": {
+        "durationMs": 200.0,
+        "offsetMs": 8320.0
+      },
+      "context": false,
+      "depth": 4,
+      "duration": {
+        "meaning": "tool duration",
+        "state": "recorded",
+        "valueMs": 200.0
+      },
+      "hasChildren": false,
+      "id": "n11",
+      "kind": "tool",
+      "label": "read",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "success",
+      "parentId": "n10",
+      "source": {
+        "file": "events.jsonl",
+        "line": 25
+      },
+      "spanId": "synthetic-span-11",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        }
+      }
+    },
+    {
+      "bar": {
+        "durationMs": 200.0,
+        "offsetMs": 8570.0
+      },
+      "context": false,
+      "depth": 4,
+      "duration": {
+        "meaning": "tool duration",
+        "state": "recorded",
+        "valueMs": 200.0
+      },
+      "hasChildren": false,
+      "id": "n12",
+      "kind": "tool",
+      "label": "write",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "success",
+      "parentId": "n10",
+      "source": {
+        "file": "events.jsonl",
+        "line": 27
+      },
+      "spanId": "synthetic-span-12",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        }
+      }
+    },
+    {
+      "bar": {
+        "durationMs": 200.0,
+        "offsetMs": 8820.0
+      },
+      "context": false,
+      "depth": 4,
+      "duration": {
+        "meaning": "tool duration",
+        "state": "recorded",
+        "valueMs": 200.0
+      },
+      "hasChildren": false,
+      "id": "n13",
+      "kind": "tool",
+      "label": "verify",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "success",
+      "parentId": "n10",
+      "source": {
+        "file": "events.jsonl",
+        "line": 29
+      },
+      "spanId": "synthetic-span-13",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "cacheWriteTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "contributorCount": 0,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "notApplicable",
+            "value": null
+          },
+          "provenance": "none",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "notApplicable",
+            "value": null
+          }
+        }
+      }
+    },
+    {
+      "bar": {
+        "durationMs": 900.0,
+        "offsetMs": 9200.0
+      },
+      "context": false,
+      "depth": 3,
+      "duration": {
+        "meaning": "completed generation",
+        "state": "recorded",
+        "valueMs": 900.0
+      },
+      "hasChildren": false,
+      "id": "n14",
+      "kind": "generation",
+      "label": "Generation 14",
+      "labelTruncated": false,
+      "match": true,
+      "outcome": "success",
+      "parentId": "n9",
+      "source": {
+        "file": "events.jsonl",
+        "line": 31
+      },
+      "spanId": "synthetic-span-14",
+      "spanUsage": {
+        "childAttribution": "notApplicable",
+        "inclusive": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "20"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "100"
+          },
+          "observedGenerations": 1,
+          "outputTokens": {
+            "state": "exact",
+            "value": "50"
+          },
+          "provenance": "recordedGeneration",
+          "totalGenerations": 1,
+          "totalTokens": {
+            "state": "exact",
+            "value": "170"
+          }
+        },
+        "own": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "20"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "100"
+          },
+          "observedGenerations": 1,
+          "outputTokens": {
+            "state": "exact",
+            "value": "50"
+          },
+          "provenance": "recordedGeneration",
+          "totalGenerations": 1,
+          "totalTokens": {
+            "state": "exact",
+            "value": "170"
+          }
+        }
+      }
+    }
+  ],
+  "nextCursor": null,
+  "snapshotId": "synthetic-snapshot",
+  "totalMatches": 14,
+  "totalRows": 14
+}

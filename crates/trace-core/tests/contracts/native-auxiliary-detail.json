@@ -1,0 +1,1126 @@
+{
+  "context": null,
+  "diagnosticIds": [],
+  "metadata": {
+    "model": null,
+    "sessionId": null,
+    "stepIndex": null,
+    "toolName": null,
+    "turnIndex": null
+  },
+  "nativeUsage": [
+    {
+      "accepted": true,
+      "accounting": {
+        "cacheReadTokens": {
+          "state": "exact",
+          "value": "3"
+        },
+        "cacheWriteTokens": {
+          "state": "exact",
+          "value": "4"
+        },
+        "contributorCount": 1,
+        "fallbackContributions": 0,
+        "inputTokens": {
+          "state": "exact",
+          "value": "1"
+        },
+        "observedGenerations": 0,
+        "outputTokens": {
+          "state": "exact",
+          "value": "2"
+        },
+        "provenance": "nativeAuxiliary",
+        "totalGenerations": 0,
+        "totalTokens": {
+          "state": "exact",
+          "value": "10"
+        }
+      },
+      "authority": "piPinnedProfile",
+      "id": "entry:b",
+      "nativeCounters": [
+        {
+          "name": "input",
+          "source": {
+            "byteRange": {
+              "end": "551",
+              "start": "380"
+            },
+            "kind": "jsonl",
+            "line": "4",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "1"
+          }
+        },
+        {
+          "name": "output",
+          "source": {
+            "byteRange": {
+              "end": "551",
+              "start": "380"
+            },
+            "kind": "jsonl",
+            "line": "4",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "2"
+          }
+        },
+        {
+          "name": "cacheRead",
+          "source": {
+            "byteRange": {
+              "end": "551",
+              "start": "380"
+            },
+            "kind": "jsonl",
+            "line": "4",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "3"
+          }
+        },
+        {
+          "name": "cacheWrite",
+          "source": {
+            "byteRange": {
+              "end": "551",
+              "start": "380"
+            },
+            "kind": "jsonl",
+            "line": "4",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "4"
+          }
+        },
+        {
+          "name": "total",
+          "source": {
+            "byteRange": {
+              "end": "551",
+              "start": "380"
+            },
+            "kind": "jsonl",
+            "line": "4",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "10"
+          }
+        },
+        {
+          "name": "reasoning",
+          "source": {
+            "byteRange": {
+              "end": "551",
+              "start": "380"
+            },
+            "kind": "jsonl",
+            "line": "4",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "1"
+          }
+        },
+        {
+          "name": "cacheWrite1h",
+          "source": {
+            "byteRange": {
+              "end": "551",
+              "start": "380"
+            },
+            "kind": "jsonl",
+            "line": "4",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "2"
+          }
+        }
+      ],
+      "normalization": [
+        {
+          "component": "outputTokens",
+          "operands": [
+            {
+              "name": "reasoning",
+              "source": {
+                "byteRange": {
+                  "end": "551",
+                  "start": "380"
+                },
+                "kind": "jsonl",
+                "line": "4",
+                "provider": "pi",
+                "source": "s.jsonl",
+                "storeId": "synthetic-store"
+              },
+              "value": {
+                "state": "exact",
+                "value": "1"
+              }
+            },
+            {
+              "name": "output",
+              "source": {
+                "byteRange": {
+                  "end": "551",
+                  "start": "380"
+                },
+                "kind": "jsonl",
+                "line": "4",
+                "provider": "pi",
+                "source": "s.jsonl",
+                "storeId": "synthetic-store"
+              },
+              "value": {
+                "state": "exact",
+                "value": "2"
+              }
+            }
+          ],
+          "rule": "reasoningIsSubsetOfOutput"
+        },
+        {
+          "component": "cacheWriteTokens",
+          "operands": [
+            {
+              "name": "cacheWrite1h",
+              "source": {
+                "byteRange": {
+                  "end": "551",
+                  "start": "380"
+                },
+                "kind": "jsonl",
+                "line": "4",
+                "provider": "pi",
+                "source": "s.jsonl",
+                "storeId": "synthetic-store"
+              },
+              "value": {
+                "state": "exact",
+                "value": "2"
+              }
+            },
+            {
+              "name": "cacheWrite",
+              "source": {
+                "byteRange": {
+                  "end": "551",
+                  "start": "380"
+                },
+                "kind": "jsonl",
+                "line": "4",
+                "provider": "pi",
+                "source": "s.jsonl",
+                "storeId": "synthetic-store"
+              },
+              "value": {
+                "state": "exact",
+                "value": "4"
+              }
+            }
+          ],
+          "rule": "cacheSubdivisionIncludedInAggregate"
+        }
+      ],
+      "role": {
+        "category": "branch_summary",
+        "kind": "contribution"
+      },
+      "source": {
+        "byteRange": {
+          "end": "551",
+          "start": "380"
+        },
+        "kind": "jsonl",
+        "line": "4",
+        "provider": "pi",
+        "source": "s.jsonl",
+        "storeId": "synthetic-store"
+      }
+    },
+    {
+      "accepted": true,
+      "accounting": {
+        "cacheReadTokens": {
+          "state": "exact",
+          "value": "3"
+        },
+        "cacheWriteTokens": {
+          "state": "exact",
+          "value": "4"
+        },
+        "contributorCount": 1,
+        "fallbackContributions": 0,
+        "inputTokens": {
+          "state": "exact",
+          "value": "1"
+        },
+        "observedGenerations": 0,
+        "outputTokens": {
+          "state": "exact",
+          "value": "2"
+        },
+        "provenance": "nativeAuxiliary",
+        "totalGenerations": 0,
+        "totalTokens": {
+          "state": "exact",
+          "value": "10"
+        }
+      },
+      "authority": "piPinnedProfile",
+      "id": "entry:c",
+      "nativeCounters": [
+        {
+          "name": "input",
+          "source": {
+            "byteRange": {
+              "end": "380",
+              "start": "226"
+            },
+            "kind": "jsonl",
+            "line": "3",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "1"
+          }
+        },
+        {
+          "name": "output",
+          "source": {
+            "byteRange": {
+              "end": "380",
+              "start": "226"
+            },
+            "kind": "jsonl",
+            "line": "3",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "2"
+          }
+        },
+        {
+          "name": "cacheRead",
+          "source": {
+            "byteRange": {
+              "end": "380",
+              "start": "226"
+            },
+            "kind": "jsonl",
+            "line": "3",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "3"
+          }
+        },
+        {
+          "name": "cacheWrite",
+          "source": {
+            "byteRange": {
+              "end": "380",
+              "start": "226"
+            },
+            "kind": "jsonl",
+            "line": "3",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "4"
+          }
+        },
+        {
+          "name": "total",
+          "source": {
+            "byteRange": {
+              "end": "380",
+              "start": "226"
+            },
+            "kind": "jsonl",
+            "line": "3",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "10"
+          }
+        },
+        {
+          "name": "reasoning",
+          "source": {
+            "byteRange": {
+              "end": "380",
+              "start": "226"
+            },
+            "kind": "jsonl",
+            "line": "3",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "1"
+          }
+        },
+        {
+          "name": "cacheWrite1h",
+          "source": {
+            "byteRange": {
+              "end": "380",
+              "start": "226"
+            },
+            "kind": "jsonl",
+            "line": "3",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "2"
+          }
+        }
+      ],
+      "normalization": [
+        {
+          "component": "outputTokens",
+          "operands": [
+            {
+              "name": "reasoning",
+              "source": {
+                "byteRange": {
+                  "end": "380",
+                  "start": "226"
+                },
+                "kind": "jsonl",
+                "line": "3",
+                "provider": "pi",
+                "source": "s.jsonl",
+                "storeId": "synthetic-store"
+              },
+              "value": {
+                "state": "exact",
+                "value": "1"
+              }
+            },
+            {
+              "name": "output",
+              "source": {
+                "byteRange": {
+                  "end": "380",
+                  "start": "226"
+                },
+                "kind": "jsonl",
+                "line": "3",
+                "provider": "pi",
+                "source": "s.jsonl",
+                "storeId": "synthetic-store"
+              },
+              "value": {
+                "state": "exact",
+                "value": "2"
+              }
+            }
+          ],
+          "rule": "reasoningIsSubsetOfOutput"
+        },
+        {
+          "component": "cacheWriteTokens",
+          "operands": [
+            {
+              "name": "cacheWrite1h",
+              "source": {
+                "byteRange": {
+                  "end": "380",
+                  "start": "226"
+                },
+                "kind": "jsonl",
+                "line": "3",
+                "provider": "pi",
+                "source": "s.jsonl",
+                "storeId": "synthetic-store"
+              },
+              "value": {
+                "state": "exact",
+                "value": "2"
+              }
+            },
+            {
+              "name": "cacheWrite",
+              "source": {
+                "byteRange": {
+                  "end": "380",
+                  "start": "226"
+                },
+                "kind": "jsonl",
+                "line": "3",
+                "provider": "pi",
+                "source": "s.jsonl",
+                "storeId": "synthetic-store"
+              },
+              "value": {
+                "state": "exact",
+                "value": "4"
+              }
+            }
+          ],
+          "rule": "cacheSubdivisionIncludedInAggregate"
+        }
+      ],
+      "role": {
+        "category": "compaction",
+        "kind": "contribution"
+      },
+      "source": {
+        "byteRange": {
+          "end": "380",
+          "start": "226"
+        },
+        "kind": "jsonl",
+        "line": "3",
+        "provider": "pi",
+        "source": "s.jsonl",
+        "storeId": "synthetic-store"
+      }
+    },
+    {
+      "accepted": true,
+      "accounting": {
+        "cacheReadTokens": {
+          "state": "exact",
+          "value": "3"
+        },
+        "cacheWriteTokens": {
+          "state": "exact",
+          "value": "4"
+        },
+        "contributorCount": 1,
+        "fallbackContributions": 0,
+        "inputTokens": {
+          "state": "exact",
+          "value": "1"
+        },
+        "observedGenerations": 0,
+        "outputTokens": {
+          "state": "exact",
+          "value": "2"
+        },
+        "provenance": "nativeAuxiliary",
+        "totalGenerations": 0,
+        "totalTokens": {
+          "state": "exact",
+          "value": "10"
+        }
+      },
+      "authority": "piPinnedProfile",
+      "id": "entry:u",
+      "nativeCounters": [
+        {
+          "name": "input",
+          "source": {
+            "byteRange": {
+              "end": "226",
+              "start": "76"
+            },
+            "kind": "jsonl",
+            "line": "2",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "1"
+          }
+        },
+        {
+          "name": "output",
+          "source": {
+            "byteRange": {
+              "end": "226",
+              "start": "76"
+            },
+            "kind": "jsonl",
+            "line": "2",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "2"
+          }
+        },
+        {
+          "name": "cacheRead",
+          "source": {
+            "byteRange": {
+              "end": "226",
+              "start": "76"
+            },
+            "kind": "jsonl",
+            "line": "2",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "3"
+          }
+        },
+        {
+          "name": "cacheWrite",
+          "source": {
+            "byteRange": {
+              "end": "226",
+              "start": "76"
+            },
+            "kind": "jsonl",
+            "line": "2",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "4"
+          }
+        },
+        {
+          "name": "total",
+          "source": {
+            "byteRange": {
+              "end": "226",
+              "start": "76"
+            },
+            "kind": "jsonl",
+            "line": "2",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "10"
+          }
+        },
+        {
+          "name": "reasoning",
+          "source": {
+            "byteRange": {
+              "end": "226",
+              "start": "76"
+            },
+            "kind": "jsonl",
+            "line": "2",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "1"
+          }
+        },
+        {
+          "name": "cacheWrite1h",
+          "source": {
+            "byteRange": {
+              "end": "226",
+              "start": "76"
+            },
+            "kind": "jsonl",
+            "line": "2",
+            "provider": "pi",
+            "source": "s.jsonl",
+            "storeId": "synthetic-store"
+          },
+          "value": {
+            "state": "exact",
+            "value": "2"
+          }
+        }
+      ],
+      "normalization": [
+        {
+          "component": "outputTokens",
+          "operands": [
+            {
+              "name": "reasoning",
+              "source": {
+                "byteRange": {
+                  "end": "226",
+                  "start": "76"
+                },
+                "kind": "jsonl",
+                "line": "2",
+                "provider": "pi",
+                "source": "s.jsonl",
+                "storeId": "synthetic-store"
+              },
+              "value": {
+                "state": "exact",
+                "value": "1"
+              }
+            },
+            {
+              "name": "output",
+              "source": {
+                "byteRange": {
+                  "end": "226",
+                  "start": "76"
+                },
+                "kind": "jsonl",
+                "line": "2",
+                "provider": "pi",
+                "source": "s.jsonl",
+                "storeId": "synthetic-store"
+              },
+              "value": {
+                "state": "exact",
+                "value": "2"
+              }
+            }
+          ],
+          "rule": "reasoningIsSubsetOfOutput"
+        },
+        {
+          "component": "cacheWriteTokens",
+          "operands": [
+            {
+              "name": "cacheWrite1h",
+              "source": {
+                "byteRange": {
+                  "end": "226",
+                  "start": "76"
+                },
+                "kind": "jsonl",
+                "line": "2",
+                "provider": "pi",
+                "source": "s.jsonl",
+                "storeId": "synthetic-store"
+              },
+              "value": {
+                "state": "exact",
+                "value": "2"
+              }
+            },
+            {
+              "name": "cacheWrite",
+              "source": {
+                "byteRange": {
+                  "end": "226",
+                  "start": "76"
+                },
+                "kind": "jsonl",
+                "line": "2",
+                "provider": "pi",
+                "source": "s.jsonl",
+                "storeId": "synthetic-store"
+              },
+              "value": {
+                "state": "exact",
+                "value": "4"
+              }
+            }
+          ],
+          "rule": "cacheSubdivisionIncludedInAggregate"
+        }
+      ],
+      "role": {
+        "category": "usage",
+        "kind": "contribution"
+      },
+      "source": {
+        "byteRange": {
+          "end": "226",
+          "start": "76"
+        },
+        "kind": "jsonl",
+        "line": "2",
+        "provider": "pi",
+        "source": "s.jsonl",
+        "storeId": "synthetic-store"
+      }
+    }
+  ],
+  "observation": {
+    "bar": null,
+    "context": false,
+    "depth": 0,
+    "duration": {
+      "meaning": "execution duration is not persisted",
+      "state": "unknown",
+      "valueMs": null
+    },
+    "hasChildren": true,
+    "id": "synthetic-node-1",
+    "kind": "session",
+    "label": "Session",
+    "labelTruncated": false,
+    "match": true,
+    "outcome": "unknown",
+    "parentId": null,
+    "source": {
+      "byteRange": {
+        "end": "76",
+        "start": "0"
+      },
+      "kind": "jsonl",
+      "line": "1",
+      "provider": "pi",
+      "source": "s.jsonl",
+      "storeId": "synthetic-store"
+    },
+    "spanId": "synthetic-span-1",
+    "spanUsage": {
+      "childAttribution": "notApplicable",
+      "inclusive": {
+        "cacheReadTokens": {
+          "state": "exact",
+          "value": "9"
+        },
+        "cacheWriteTokens": {
+          "state": "exact",
+          "value": "12"
+        },
+        "contributorCount": 3,
+        "fallbackContributions": 0,
+        "inputTokens": {
+          "state": "exact",
+          "value": "3"
+        },
+        "observedGenerations": 0,
+        "outputTokens": {
+          "state": "exact",
+          "value": "6"
+        },
+        "provenance": "aggregate",
+        "totalGenerations": 0,
+        "totalTokens": {
+          "state": "exact",
+          "value": "30"
+        }
+      },
+      "own": {
+        "cacheReadTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "cacheWriteTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "contributorCount": 0,
+        "fallbackContributions": 0,
+        "inputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "observedGenerations": 0,
+        "outputTokens": {
+          "state": "notApplicable",
+          "value": null
+        },
+        "provenance": "none",
+        "totalGenerations": 0,
+        "totalTokens": {
+          "state": "notApplicable",
+          "value": null
+        }
+      }
+    }
+  },
+  "relationship": {
+    "executionParentId": null,
+    "state": "root"
+  },
+  "relationships": [],
+  "requestToHeaders": {
+    "meaning": "request to headers is not persisted",
+    "state": "unknown",
+    "valueMs": null
+  },
+  "selectedContext": "b",
+  "snapshotId": "synthetic-snapshot",
+  "sources": [
+    {
+      "byteRange": {
+        "end": "76",
+        "start": "0"
+      },
+      "kind": "jsonl",
+      "line": "1",
+      "provider": "pi",
+      "source": "s.jsonl",
+      "storeId": "synthetic-store"
+    }
+  ],
+  "spanUsage": {
+    "childAttribution": "notApplicable",
+    "contributorCount": 3,
+    "evidence": [
+      {
+        "accounting": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "3"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "4"
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "exact",
+            "value": "2"
+          },
+          "provenance": "nativeAuxiliary",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "exact",
+            "value": "10"
+          }
+        },
+        "contributionId": "entry:b",
+        "reportedTotal": {
+          "state": "exact",
+          "value": "10"
+        },
+        "source": {
+          "byteRange": {
+            "end": "551",
+            "start": "380"
+          },
+          "kind": "jsonl",
+          "line": "4",
+          "provider": "pi",
+          "source": "s.jsonl",
+          "storeId": "synthetic-store"
+        },
+        "spanId": "synthetic-span-2"
+      },
+      {
+        "accounting": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "3"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "4"
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "exact",
+            "value": "2"
+          },
+          "provenance": "nativeAuxiliary",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "exact",
+            "value": "10"
+          }
+        },
+        "contributionId": "entry:c",
+        "reportedTotal": {
+          "state": "exact",
+          "value": "10"
+        },
+        "source": {
+          "byteRange": {
+            "end": "380",
+            "start": "226"
+          },
+          "kind": "jsonl",
+          "line": "3",
+          "provider": "pi",
+          "source": "s.jsonl",
+          "storeId": "synthetic-store"
+        },
+        "spanId": "synthetic-span-3"
+      },
+      {
+        "accounting": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "3"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "4"
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "1"
+          },
+          "observedGenerations": 0,
+          "outputTokens": {
+            "state": "exact",
+            "value": "2"
+          },
+          "provenance": "nativeAuxiliary",
+          "totalGenerations": 0,
+          "totalTokens": {
+            "state": "exact",
+            "value": "10"
+          }
+        },
+        "contributionId": "entry:u",
+        "reportedTotal": {
+          "state": "exact",
+          "value": "10"
+        },
+        "source": {
+          "byteRange": {
+            "end": "226",
+            "start": "76"
+          },
+          "kind": "jsonl",
+          "line": "2",
+          "provider": "pi",
+          "source": "s.jsonl",
+          "storeId": "synthetic-store"
+        },
+        "spanId": "synthetic-span-4"
+      }
+    ],
+    "inclusive": {
+      "cacheReadTokens": {
+        "state": "exact",
+        "value": "9"
+      },
+      "cacheWriteTokens": {
+        "state": "exact",
+        "value": "12"
+      },
+      "contributorCount": 3,
+      "fallbackContributions": 0,
+      "inputTokens": {
+        "state": "exact",
+        "value": "3"
+      },
+      "observedGenerations": 0,
+      "outputTokens": {
+        "state": "exact",
+        "value": "6"
+      },
+      "provenance": "aggregate",
+      "totalGenerations": 0,
+      "totalTokens": {
+        "state": "exact",
+        "value": "30"
+      }
+    },
+    "omittedCount": 0,
+    "own": {
+      "cacheReadTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "cacheWriteTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "contributorCount": 0,
+      "fallbackContributions": 0,
+      "inputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "observedGenerations": 0,
+      "outputTokens": {
+        "state": "notApplicable",
+        "value": null
+      },
+      "provenance": "none",
+      "totalGenerations": 0,
+      "totalTokens": {
+        "state": "notApplicable",
+        "value": null
+      }
+    }
+  },
+  "timingEvidence": [],
+  "toolInspection": null,
+  "ttft": {
+    "meaning": "first-token latency is not persisted",
+    "state": "unknown",
+    "valueMs": null
+  },
+  "usage": {
+    "cacheReadTokens": null,
+    "cacheWriteTokens": null,
+    "cost": null,
+    "fallbackSource": null,
+    "inputTokens": null,
+    "observedGenerations": 0,
+    "outputTokens": null,
+    "state": "unknown",
+    "totalGenerations": 0,
+    "totalTokens": null
+  }
+}

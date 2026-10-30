@@ -1,0 +1,75 @@
+{
+  "diagnosticCount": 0,
+  "duration": {
+    "meaning": "session execution interval is not persisted",
+    "state": "unknown",
+    "valueMs": null
+  },
+  "generationCount": 1,
+  "interactionCount": 0,
+  "measurementAvailability": {
+    "duration": false,
+    "requestToHeaders": false,
+    "ttft": false
+  },
+  "model": null,
+  "nodeCount": 2,
+  "recordCount": 2,
+  "sessionCount": 1,
+  "snapshotId": "synthetic-snapshot",
+  "source": {
+    "byteRange": {
+      "end": "85",
+      "start": "0"
+    },
+    "kind": "jsonl",
+    "line": "1",
+    "provider": "pi",
+    "source": "example.jsonl",
+    "storeId": "synthetic-store"
+  },
+  "sourceCount": 1,
+  "timeline": null,
+  "title": "pi session",
+  "tokenAccounting": {
+    "cacheReadTokens": {
+      "state": "unknown",
+      "value": null
+    },
+    "cacheWriteTokens": {
+      "state": "unknown",
+      "value": null
+    },
+    "contributorCount": 1,
+    "fallbackContributions": 0,
+    "inputTokens": {
+      "state": "exact",
+      "value": "2"
+    },
+    "observedGenerations": 1,
+    "outputTokens": {
+      "state": "exact",
+      "value": "3"
+    },
+    "provenance": "aggregate",
+    "totalGenerations": 1,
+    "totalTokens": {
+      "state": "unknown",
+      "value": null
+    }
+  },
+  "toolCount": 0,
+  "turnCount": 0,
+  "usage": {
+    "cacheReadTokens": null,
+    "cacheWriteTokens": null,
+    "cost": null,
+    "fallbackSource": null,
+    "inputTokens": null,
+    "observedGenerations": 0,
+    "outputTokens": null,
+    "state": "unknown",
+    "totalGenerations": 0,
+    "totalTokens": null
+  }
+}

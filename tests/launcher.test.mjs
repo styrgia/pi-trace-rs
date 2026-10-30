@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createServer } from "node:http";
-import { mkdtemp, mkdir, writeFile, readFile, rm, chmod, stat } from "node:fs/promises";
+import { mkdtemp, mkdir, writeFile, readFile, rm, chmod, stat, symlink } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 import { setTimeout as delay } from "node:timers/promises";
@@ -12,6 +12,7 @@ const fakeServer = `#!${process.execPath}
 import { createServer } from "node:http";
 import { writeFileSync } from "node:fs";
 writeFileSync("server.pid", String(process.pid));
+writeFileSync("invocation.json", JSON.stringify({ args: process.argv.slice(2), cwd: process.cwd() }));
 const port = Number(process.argv[2]);
 if (process.argv[3] === "hang") {
   process.on("SIGTERM", () => {});
@@ -55,7 +56,7 @@ async function waitForFile(path) {
   throw new Error(`Timed out waiting for ${path}`);
 }
 
-function launcherFor(t, config, mode = "serve") {
+function launcherFor(t, config, mode = "normal") {
   const launcher = createLauncher({
     ...config,
     executable: process.execPath,
@@ -105,6 +106,48 @@ test("concurrent and repeated starts share one owned server, and stop permits a 
   const next = await launcher.start();
   assert.notEqual(next, first);
   assert.notEqual(Number(await readFile(resolve(config.root, "server.pid"), "utf8")), pid);
+});
+
+test("source paths resolve against invocation cwd and remain one shell-free argument", async (t) => {
+  const config = await fixture(t);
+  const launcher = launcherFor(t, config);
+  const cwd = resolve(config.root, "caller workspace");
+  const source = "recordings/trace with spaces;$(no-shell)";
+  await mkdir(cwd);
+  const app = await launcher.start({ source, cwd });
+  const invocation = JSON.parse(await readFile(resolve(config.root, "invocation.json"), "utf8"));
+  assert.deepEqual(invocation, {
+    args: [String(config.port), "normal", "serve", resolve(cwd, source)],
+    cwd: config.root,
+  });
+  assert.equal(await launcher.start({ source: resolve(cwd, source) }), app);
+  await assert.rejects(launcher.start(), /different source.*Stop Pi Trace/);
+  await assert.rejects(launcher.start({ source: "another recording", cwd }), /different source.*Stop Pi Trace/);
+  assert.equal((await fetch(`${app.url}/api/v1/health`)).status, 200);
+  await launcher.stop();
+  const empty = await launcher.start();
+  assert.notEqual(empty, app);
+  assert.deepEqual(JSON.parse(await readFile(resolve(config.root, "invocation.json"), "utf8")).args, [String(config.port), "normal"]);
+  await assert.rejects(launcher.start({ source, cwd }), /different source.*Stop Pi Trace/);
+});
+
+test("in-flight starts share only the same resolved source and refuse a different source", async (t) => {
+  const config = await fixture(t);
+  const launcher = launcherFor(t, config);
+  const first = launcher.start({ source: "trace with spaces", cwd: config.root });
+  const same = launcher.start({ source: resolve(config.root, "trace with spaces") });
+  await assert.rejects(launcher.start({ source: "another trace", cwd: config.root }), /different source.*Stop Pi Trace/);
+  await assert.rejects(launcher.start(), /different source.*Stop Pi Trace/);
+  assert.equal(await first, await same);
+});
+
+test("invalid source values are refused before spawning", async (t) => {
+  const config = await fixture(t);
+  const launcher = launcherFor(t, config);
+  for (const source of ["", 3, {}]) {
+    await assert.rejects(launcher.start({ source }), /recording directory/);
+  }
+  await assert.rejects(stat(resolve(config.root, "server.pid")), { code: "ENOENT" });
 });
 
 test("a port collision never attaches to, queries, or kills another server", async (t) => {
@@ -256,4 +299,265 @@ test("start falls back to a locally compiled executable when no platform binary 
   t.after(() => launcher.dispose());
   const app = await launcher.start();
   assert.equal((await fetch(`${app.url}/api/v1/health`)).status, 200);
+});
+
+test("watch processes reuse only the same source and mode and forward one shell-free path", async (t) => {
+  const config = await fixture(t);
+  const launcher = launcherFor(t, config);
+  const source = "live traces/with spaces;$(no-shell)";
+  const first = launcher.start({ source, cwd: config.root, mode: "watch" });
+  const same = launcher.start({ source: resolve(config.root, source), mode: "watch" });
+  await assert.rejects(launcher.start({ source, cwd: config.root }), /different mode/);
+  assert.equal(await first, await same);
+  const app = await first;
+  const pid = Number(await readFile(resolve(config.root, "server.pid"), "utf8"));
+  assert.deepEqual(JSON.parse(await readFile(resolve(config.root, "invocation.json"), "utf8")).args, [String(config.port), "normal", "watch", resolve(config.root, source)]);
+  await assert.rejects(launcher.start({ source, cwd: config.root, mode: "offline" }), /different mode/);
+  await assert.rejects(launcher.start({ source: "another", cwd: config.root, mode: "watch" }), /different source/);
+  assert.equal(Number(await readFile(resolve(config.root, "server.pid"), "utf8")), pid);
+  assert.equal((await fetch(`${app.url}/api/v1/health`)).status, 200);
+  await launcher.stop();
+  assert.throws(() => process.kill(pid, 0), { code: "ESRCH" });
+});
+
+test("invalid watch mode or missing source is refused before spawning", async (t) => {
+  const config = await fixture(t);
+  const launcher = launcherFor(t, config);
+  for (const options of [{ mode: "watch" }, { source: "a", mode: "unknown" }]) {
+    await assert.rejects(launcher.start(options), /mode|recording directory/);
+  }
+  await assert.rejects(stat(resolve(config.root, "server.pid")), { code: "ENOENT" });
+});
+
+test("an owned offline process refuses watch without stopping or replacing it", async (t) => {
+  const config = await fixture(t);
+  const launcher = launcherFor(t, config);
+  const source = "same trace";
+  const app = await launcher.start({ source, cwd: config.root });
+  const pid = Number(await readFile(resolve(config.root, "server.pid"), "utf8"));
+  await assert.rejects(launcher.start({ source, cwd: config.root, mode: "watch" }), /different mode/);
+  assert.equal(await launcher.start({ source, cwd: config.root }), app);
+  assert.equal(Number(await readFile(resolve(config.root, "server.pid"), "utf8")), pid);
+});
+
+test("watch startup cancellation stops only the owned child", async (t) => {
+  const config = await fixture(t);
+  const launcher = launcherFor(t, config, "hang");
+  const starting = launcher.start({ source: "trace with spaces", cwd: config.root, mode: "watch" });
+  const rejection = assert.rejects(starting, /cancelled|exited before becoming ready/);
+  const pid = Number(await waitForFile(resolve(config.root, "server.pid")));
+  await launcher.dispose();
+  await rejection;
+  assert.throws(() => process.kill(pid, 0), { code: "ESRCH" });
+});
+
+async function systemFixture(t, env = {}, mode = "normal") {
+  const config = await fixture(t);
+  const home = resolve(config.root, "synthetic home");
+  const cwd = resolve(config.root, "caller workspace");
+  await mkdir(home);
+  await mkdir(cwd);
+  const launcher = launcherFor(t, { ...config, env, home }, mode);
+  return {
+    ...config, home, cwd, launcher,
+    invocation: async () => JSON.parse(await readFile(resolve(config.root, "invocation.json"), "utf8")),
+  };
+}
+
+test("explicit system mode forwards all default stores from an injected synthetic home", async (t) => {
+  const config = await systemFixture(t);
+  const app = await config.launcher.start({ mode: "system", cwd: config.cwd });
+  assert.deepEqual(await config.invocation(), {
+    cwd: config.root,
+    args: [String(config.port), "normal", "system",
+      "--root", `claude=${config.home}/.claude/projects`,
+      "--root", `codex=${config.home}/.codex`,
+      "--root", `opencode=${config.home}/.local/share/opencode`,
+      "--root", `pi=${config.home}/.pi/agent/sessions`],
+  });
+  assert.equal((await fetch(`${app.url}/api/v1/health`)).status, 200);
+  await assert.rejects(config.launcher.start(), /different mode/);
+  assert.equal(await config.launcher.start({ mode: "system", cwd: config.cwd }), app);
+});
+
+test("inherited relative settings are frozen against the caller cwd before native startup", async (t) => {
+  const env = {
+    CODEX_HOME: "custom codex",
+    PI_CODING_AGENT_DIR: "custom pi",
+    CLAUDE_CONFIG_DIR: "custom claude",
+    XDG_DATA_HOME: "custom data",
+    OPENCODE_DB: "opencode channel.db",
+    PI_SESSION_DIR: "ignored unsupported setting",
+  };
+  const config = await systemFixture(t, env);
+  const app = await config.launcher.start({ mode: "system", cwd: config.cwd });
+  assert.deepEqual((await config.invocation()).args, [String(config.port), "normal", "system",
+    "--root", `claude=${config.cwd}/custom claude/projects`,
+    "--root", `codex=${config.cwd}/custom codex`,
+    "--root", `opencode=${config.cwd}/custom data/opencode/opencode channel.db`,
+    "--root", `pi=${config.cwd}/custom pi/sessions`]);
+  assert.equal(await config.launcher.start({ mode: "system", roots: [
+    `pi=${config.cwd}/custom pi/sessions`, `opencode=${config.cwd}/custom data/opencode/opencode channel.db`,
+    `codex=${config.cwd}/custom codex`, `claude=${config.cwd}/custom claude/projects`,
+  ] }), app);
+  env.CODEX_HOME = "different codex";
+  await assert.rejects(config.launcher.start({ mode: "system", cwd: config.cwd }), /different provider configuration/);
+  assert.equal((await fetch(`${app.url}/api/v1/health`)).status, 200);
+});
+
+test("Pi's custom session directory overrides its agent directory without appending sessions", async (t) => {
+  const config = await systemFixture(t, { PI_CODING_AGENT_DIR: "unused agent", PI_CODING_AGENT_SESSION_DIR: "selected sessions" });
+  await config.launcher.start({ mode: "system", cwd: config.cwd, disabledProviders: ["codex", "claude", "opencode"] });
+  assert.deepEqual((await config.invocation()).args, [String(config.port), "normal", "system",
+    "--disable-provider", "claude", "--disable-provider", "codex", "--disable-provider", "opencode",
+    "--root", `pi=${config.cwd}/selected sessions`]);
+});
+
+test("system aliases and reordered multistore roots reuse one process and override defaults", async (t) => {
+  const config = await systemFixture(t, { CODEX_HOME: "unused", OPENCODE_DB: ":memory:" });
+  const store = resolve(config.cwd, "store with spaces;$(no-shell)");
+  const alias = resolve(config.cwd, "store alias");
+  await mkdir(store);
+  await symlink(store, alias, "dir");
+  const options = {
+    mode: "system", cwd: config.cwd,
+    roots: ["codex=store alias", "codex=store with spaces;$(no-shell)", "pi=second store", "pi=first store"],
+    disabledProviders: ["opencode", "claude", "opencode"],
+  };
+  const first = config.launcher.start(options);
+  const same = config.launcher.start({ mode: "system", roots: [
+    `pi=${config.cwd}/first store`, `codex=${store}`, `pi=${config.cwd}/second store`,
+  ], disabledProviders: ["claude", "opencode"] });
+  const app = await first;
+  assert.equal(await same, app);
+  assert.deepEqual((await config.invocation()).args, [String(config.port), "normal", "system",
+    "--disable-provider", "claude", "--root", `codex=${store}`, "--disable-provider", "opencode",
+    "--root", `pi=${config.cwd}/first store`, "--root", `pi=${config.cwd}/second store`]);
+  const pid = Number(await readFile(resolve(config.root, "server.pid"), "utf8"));
+  await assert.rejects(config.launcher.start({ ...options, roots: ["codex=other store", "pi=first store"] }), /different provider configuration/);
+  await assert.rejects(config.launcher.start({ ...options, disabledProviders: ["claude"], roots: ["codex=store alias", "opencode=selected.db", "pi=first store"] }), /different provider configuration/);
+  await assert.rejects(config.launcher.start({ mode: "watch", source: "trace", cwd: config.cwd }), /different mode/);
+  assert.equal(Number(await readFile(resolve(config.root, "server.pid"), "utf8")), pid);
+  assert.equal((await fetch(`${app.url}/api/v1/health`)).status, 200);
+  await config.launcher.dispose();
+  assert.throws(() => process.kill(pid, 0), { code: "ESRCH" });
+});
+
+test("a missing root below a symlinked ancestor shares its canonical identity", async (t) => {
+  const config = await systemFixture(t);
+  await symlink(config.cwd, resolve(config.root, "caller alias"), "dir");
+  const options = { mode: "system", disabledProviders: ["claude", "pi", "opencode"] };
+  const app = await config.launcher.start({ ...options, roots: ["codex=missing store"], cwd: resolve(config.root, "caller alias") });
+  assert.equal(await config.launcher.start({ ...options, roots: [`codex=${config.cwd}/missing store`] }), app);
+  assert.ok((await config.invocation()).args.includes(`codex=${config.cwd}/missing store`));
+});
+
+test("OpenCode's absolute selected file excludes its parent directory and explicit roots win", async (t) => {
+  const config = await systemFixture(t);
+  const database = resolve(config.cwd, "exact selected.db");
+  const env = { XDG_DATA_HOME: "unused data", OPENCODE_DB: database };
+  const launcher = launcherFor(t, { ...config, env });
+  await launcher.start({ mode: "system", cwd: config.cwd, disabledProviders: ["claude", "codex", "pi"] });
+  assert.deepEqual((await config.invocation()).args, [String(config.port), "normal", "system",
+    "--disable-provider", "claude", "--disable-provider", "codex", "--root", `opencode=${database}`, "--disable-provider", "pi"]);
+  await launcher.stop();
+  env.OPENCODE_DB = ":memory:";
+  await launcher.start({ mode: "system", cwd: config.cwd, roots: ["opencode=override directory"], disabledProviders: ["claude", "codex", "pi"] });
+  assert.ok((await config.invocation()).args.includes(`opencode=${config.cwd}/override directory`));
+});
+
+test("invalid system roots and conflicting provider options fail before spawning", async (t) => {
+  const config = await systemFixture(t, { OPENCODE_DB: ":memory:" });
+  const base = { mode: "system", cwd: config.cwd };
+  for (const options of [
+    { roots: ["unknown=a"] }, { disabledProviders: ["unknown"] },
+    { roots: ["codex="] }, { roots: ["codex"] }, { roots: ["Codex=a"] },
+    { roots: ["pi=a", "pi=b"], disabledProviders: ["pi"] },
+    { roots: ["opencode=:memory:"] }, {},
+    { roots: "codex=a" }, { disabledProviders: null }, { source: "recording" },
+  ]) {
+    await assert.rejects(config.launcher.start({ ...base, ...options }), /provider|--root|memory|arrays|recording directory/i);
+  }
+  await assert.rejects(config.launcher.start({ roots: ["codex=a"] }), /require system mode/);
+  await assert.rejects(stat(resolve(config.root, "server.pid")), { code: "ENOENT" });
+});
+
+test("relative OpenCode database selection stays inside the data directory including aliases", async (t) => {
+  const env = { XDG_DATA_HOME: "data", OPENCODE_DB: "../outside.db" };
+  const config = await systemFixture(t, env);
+  const directory = resolve(config.cwd, "data/opencode");
+  const outside = resolve(config.cwd, "outside");
+  await mkdir(directory, { recursive: true });
+  await mkdir(outside);
+  await symlink(outside, resolve(directory, "alias"), "dir");
+  const options = { mode: "system", cwd: config.cwd, disabledProviders: ["pi", "codex", "claude"] };
+  await assert.rejects(config.launcher.start(options), /Relative OPENCODE_DB.*inside/);
+  env.OPENCODE_DB = "alias/selected.db";
+  await assert.rejects(config.launcher.start(options), /Relative OPENCODE_DB.*inside/);
+  await assert.rejects(stat(resolve(config.root, "server.pid")), { code: "ENOENT" });
+  env.OPENCODE_DB = "nested/selected.db";
+  await config.launcher.start(options);
+  assert.ok((await config.invocation()).args.includes(`opencode=${directory}/nested/selected.db`));
+  await config.launcher.stop();
+  env.OPENCODE_DB = resolve(outside, "selected.db");
+  await config.launcher.start(options);
+  assert.ok((await config.invocation()).args.includes(`opencode=${outside}/selected.db`));
+});
+
+test("system startup conflicts and cancellation leave only the owned child stopped", async (t) => {
+  const config = await systemFixture(t, {}, "hang");
+  const options = { mode: "system", roots: ["codex=one"], cwd: config.cwd };
+  const starting = config.launcher.start(options);
+  const rejection = assert.rejects(starting, /cancelled|exited before becoming ready/);
+  const pid = Number(await waitForFile(resolve(config.root, "server.pid")));
+  await assert.rejects(config.launcher.start({ ...options, roots: ["codex=two"] }), /different provider configuration/);
+  await assert.rejects(config.launcher.start(), /different mode/);
+  process.kill(pid, 0);
+  await config.launcher.dispose();
+  await rejection;
+  assert.throws(() => process.kill(pid, 0), { code: "ESRCH" });
+  await assert.rejects(config.launcher.start(options), /shut down/);
+});
+
+test("immediate disposal during system configuration prevents startup", async (t) => {
+  const config = await systemFixture(t);
+  const rejected = assert.rejects(config.launcher.start({ mode: "system", cwd: config.cwd }), /shut down/);
+  await config.launcher.dispose();
+  await rejected;
+  await assert.rejects(stat(resolve(config.root, "server.pid")), { code: "ENOENT" });
+});
+
+test("stop cancels system configuration before spawning and permits a later start", async (t) => {
+  const config = await systemFixture(t);
+  const options = { mode: "system", cwd: config.cwd };
+  const rejected = assert.rejects(config.launcher.start(options), /cancelled/);
+  await config.launcher.stop();
+  await rejected;
+  await assert.rejects(stat(resolve(config.root, "server.pid")), { code: "ENOENT" });
+  const app = await config.launcher.start(options);
+  assert.equal((await fetch(`${app.url}/api/v1/health`)).status, 200);
+});
+
+test("system root normalization reserves startup against an overlapping build", async (t) => {
+  const config = await systemFixture(t);
+  const starting = config.launcher.start({ mode: "system", cwd: config.cwd });
+  await assert.rejects(config.launcher.build(), /start is in progress/);
+  const app = await starting;
+  assert.equal((await fetch(`${app.url}/api/v1/health`)).status, 200);
+});
+
+test("system port collision does not query, reuse, or stop an unrelated service", async (t) => {
+  const config = await systemFixture(t);
+  let requests = 0;
+  const other = createServer((_request, response) => {
+    requests++;
+    response.end(JSON.stringify({ name: "pi-trace", status: "ok", stage: "bootstrap" }));
+  });
+  await new Promise((ready) => other.listen(config.port, "127.0.0.1", ready));
+  t.after(() => new Promise((closed) => other.close(closed)));
+  await assert.rejects(config.launcher.start({ mode: "system", cwd: config.cwd }), /exited before becoming ready/);
+  await config.launcher.dispose();
+  assert.equal(requests, 0);
+  assert.equal((await fetch(`http://127.0.0.1:${config.port}`)).status, 200);
+  assert.equal(requests, 1);
 });

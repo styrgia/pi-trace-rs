@@ -1,0 +1,267 @@
+{
+  "context": {
+    "categories": [],
+    "contextInputTokens": 120,
+    "contextInputTokensExact": {
+      "state": "exact",
+      "value": "120"
+    },
+    "counts": null,
+    "coverage": "complete",
+    "largestItems": [],
+    "largestSkills": [],
+    "largestTools": [],
+    "omitted": {
+      "items": null,
+      "sections": null,
+      "skills": null,
+      "tools": null
+    },
+    "payloadSize": null,
+    "requestField": "input",
+    "retention": "retentionLimited",
+    "sections": [],
+    "shape": "providerInput",
+    "source": {
+      "file": "events.jsonl",
+      "line": 5
+    }
+  },
+  "diagnosticIds": [],
+  "metadata": {
+    "model": null,
+    "sessionId": "synthetic-reference",
+    "stepIndex": 1,
+    "toolName": null,
+    "turnIndex": null
+  },
+  "observation": {
+    "bar": {
+      "durationMs": 900.0,
+      "offsetMs": 30.0
+    },
+    "context": false,
+    "depth": 3,
+    "duration": {
+      "meaning": "completed generation",
+      "state": "recorded",
+      "valueMs": 900.0
+    },
+    "hasChildren": true,
+    "id": "n4",
+    "kind": "generation",
+    "label": "Generation 4",
+    "labelTruncated": false,
+    "match": true,
+    "outcome": "success",
+    "parentId": "n3",
+    "source": {
+      "file": "events.jsonl",
+      "line": 4
+    },
+    "spanId": "synthetic-span-4",
+    "spanUsage": {
+      "childAttribution": "notApplicable",
+      "inclusive": {
+        "cacheReadTokens": {
+          "state": "exact",
+          "value": "20"
+        },
+        "cacheWriteTokens": {
+          "state": "exact",
+          "value": "0"
+        },
+        "contributorCount": 1,
+        "fallbackContributions": 0,
+        "inputTokens": {
+          "state": "exact",
+          "value": "100"
+        },
+        "observedGenerations": 1,
+        "outputTokens": {
+          "state": "exact",
+          "value": "50"
+        },
+        "provenance": "recordedGeneration",
+        "totalGenerations": 1,
+        "totalTokens": {
+          "state": "exact",
+          "value": "170"
+        }
+      },
+      "own": {
+        "cacheReadTokens": {
+          "state": "exact",
+          "value": "20"
+        },
+        "cacheWriteTokens": {
+          "state": "exact",
+          "value": "0"
+        },
+        "contributorCount": 1,
+        "fallbackContributions": 0,
+        "inputTokens": {
+          "state": "exact",
+          "value": "100"
+        },
+        "observedGenerations": 1,
+        "outputTokens": {
+          "state": "exact",
+          "value": "50"
+        },
+        "provenance": "recordedGeneration",
+        "totalGenerations": 1,
+        "totalTokens": {
+          "state": "exact",
+          "value": "170"
+        }
+      }
+    }
+  },
+  "relationship": {
+    "executionParentId": "n3",
+    "state": "linked"
+  },
+  "requestToHeaders": {
+    "meaning": "request to HTTP headers",
+    "state": "recorded",
+    "valueMs": 120.0
+  },
+  "snapshotId": "synthetic-limited-snapshot",
+  "sources": [
+    {
+      "file": "events.jsonl",
+      "line": 4
+    },
+    {
+      "file": "events.jsonl",
+      "line": 5
+    },
+    {
+      "file": "events.jsonl",
+      "line": 6
+    },
+    {
+      "file": "events.jsonl",
+      "line": 7
+    }
+  ],
+  "spanUsage": {
+    "childAttribution": "notApplicable",
+    "contributorCount": 1,
+    "evidence": [
+      {
+        "accounting": {
+          "cacheReadTokens": {
+            "state": "exact",
+            "value": "20"
+          },
+          "cacheWriteTokens": {
+            "state": "exact",
+            "value": "0"
+          },
+          "contributorCount": 1,
+          "fallbackContributions": 0,
+          "inputTokens": {
+            "state": "exact",
+            "value": "100"
+          },
+          "observedGenerations": 1,
+          "outputTokens": {
+            "state": "exact",
+            "value": "50"
+          },
+          "provenance": "recordedGeneration",
+          "totalGenerations": 1,
+          "totalTokens": {
+            "state": "exact",
+            "value": "170"
+          }
+        },
+        "contributionId": "synthetic-span-4-g",
+        "reportedTotal": {
+          "state": "unknown",
+          "value": null
+        },
+        "source": {
+          "file": "events.jsonl",
+          "line": 7
+        },
+        "spanId": "synthetic-span-4"
+      }
+    ],
+    "inclusive": {
+      "cacheReadTokens": {
+        "state": "exact",
+        "value": "20"
+      },
+      "cacheWriteTokens": {
+        "state": "exact",
+        "value": "0"
+      },
+      "contributorCount": 1,
+      "fallbackContributions": 0,
+      "inputTokens": {
+        "state": "exact",
+        "value": "100"
+      },
+      "observedGenerations": 1,
+      "outputTokens": {
+        "state": "exact",
+        "value": "50"
+      },
+      "provenance": "recordedGeneration",
+      "totalGenerations": 1,
+      "totalTokens": {
+        "state": "exact",
+        "value": "170"
+      }
+    },
+    "omittedCount": 0,
+    "own": {
+      "cacheReadTokens": {
+        "state": "exact",
+        "value": "20"
+      },
+      "cacheWriteTokens": {
+        "state": "exact",
+        "value": "0"
+      },
+      "contributorCount": 1,
+      "fallbackContributions": 0,
+      "inputTokens": {
+        "state": "exact",
+        "value": "100"
+      },
+      "observedGenerations": 1,
+      "outputTokens": {
+        "state": "exact",
+        "value": "50"
+      },
+      "provenance": "recordedGeneration",
+      "totalGenerations": 1,
+      "totalTokens": {
+        "state": "exact",
+        "value": "170"
+      }
+    }
+  },
+  "toolInspection": null,
+  "ttft": {
+    "meaning": "exact first token latency is not recorded by this source",
+    "state": "unknown",
+    "valueMs": null
+  },
+  "usage": {
+    "cacheReadTokens": 20,
+    "cacheWriteTokens": 0,
+    "cost": null,
+    "fallbackSource": null,
+    "inputTokens": 100,
+    "observedGenerations": 1,
+    "outputTokens": 50,
+    "state": "complete",
+    "totalGenerations": 1,
+    "totalTokens": 170
+  }
+}
